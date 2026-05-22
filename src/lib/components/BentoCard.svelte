@@ -27,12 +27,15 @@
 
 	let modalOpen = $state(false);
 
-	const sizeClass = gridSize === 'wide' ? 'bento-wide' : gridSize === 'tall' ? 'bento-tall' : '';
+	function getSizeClass() {
+		return gridSize === 'wide' ? 'bento-wide' : gridSize === 'tall' ? 'bento-tall' : '';
+	}
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <div
-	class="bento-card {sizeClass} fade-in"
+	class="bento-card {getSizeClass()} fade-in"
 	use:inview={{ delay }}
 	onclick={() => { if (details.length) modalOpen = true; }}
 	onkeydown={(e) => { if (e.key === 'Enter' && details.length) modalOpen = true; }}
