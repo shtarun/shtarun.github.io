@@ -1,2 +1,6 @@
-_site/
-
+.svelte-kit/
+node_modules/
+build/
+.DS_Store
+.preview/
+.superpowers/
