@@ -36,10 +36,10 @@
 		return { destroy: () => observer.disconnect() };
 	}
 
-	const logos = [
-		{ src: '/images/logos/twinity.svg', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
+	const logos: { src: string; alt: string; url?: string; invert?: boolean }[] = [
+		{ src: '/images/logos/twinity.png', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
 		{ src: '/images/logos/mks.svg', alt: 'MKS Enterprises' },
-		{ src: '/images/logos/jlr.svg', alt: 'Jaguar Land Rover' },
+		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover', invert: true },
 		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur' },
 		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel' },
 		{ src: '/images/logos/eta.png', alt: 'ETA Technology' }
@@ -76,11 +76,11 @@
 			{#each logos as logo}
 				{#if logo.url}
 					<a href={logo.url} target="_blank" rel="noopener" class="logo-item">
-						<img src={logo.src} alt={logo.alt} />
+						<img src={logo.src} alt={logo.alt} class:invert={logo.invert} />
 					</a>
 				{:else}
 					<div class="logo-item">
-						<img src={logo.src} alt={logo.alt} />
+						<img src={logo.src} alt={logo.alt} class:invert={logo.invert} />
 					</div>
 				{/if}
 			{/each}
@@ -157,6 +157,12 @@
 		width: auto;
 		object-fit: contain;
 		filter: brightness(0.8) contrast(1.1);
+	}
+	.logo-item img.invert {
+		filter: invert(1) brightness(0.85);
+	}
+	.logo-item:hover img.invert {
+		filter: invert(1) brightness(1);
 	}
 
 	.fade-in {
