@@ -36,10 +36,10 @@
 		return { destroy: () => observer.disconnect() };
 	}
 
-	const logos: { src: string; alt: string; url?: string; invert?: boolean }[] = [
+	const logos: { src: string; alt: string; url?: string }[] = [
 		{ src: '/images/logos/twinity.png', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
 		{ src: '/images/logos/mks.svg', alt: 'MKS Enterprises' },
-		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover', invert: true },
+		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover' },
 		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur' },
 		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel' },
 		{ src: '/images/logos/eta.png', alt: 'ETA Technology' }
@@ -76,11 +76,11 @@
 			{#each logos as logo}
 				{#if logo.url}
 					<a href={logo.url} target="_blank" rel="noopener" class="logo-item">
-						<img src={logo.src} alt={logo.alt} class:invert={logo.invert} />
+						<img src={logo.src} alt={logo.alt} />
 					</a>
 				{:else}
 					<div class="logo-item">
-						<img src={logo.src} alt={logo.alt} class:invert={logo.invert} />
+						<img src={logo.src} alt={logo.alt} />
 					</div>
 				{/if}
 			{/each}
@@ -140,29 +140,31 @@
 	.logo-row {
 		display: flex;
 		align-items: center;
-		gap: 2.5rem;
+		gap: 1.5rem;
 		flex-wrap: wrap;
 	}
 	.logo-item {
-		height: 36px;
-		opacity: 0.5;
-		transition: opacity 0.3s ease;
+		background: #ffffff;
+		border-radius: 10px;
+		padding: 0.5rem 1rem;
+		height: 52px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.85;
+		transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 		text-decoration: none;
 	}
 	.logo-item:hover {
 		opacity: 1;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 	}
 	.logo-item img {
-		height: 100%;
+		height: 32px;
 		width: auto;
+		max-width: 120px;
 		object-fit: contain;
-		filter: brightness(0.8) contrast(1.1);
-	}
-	.logo-item img.invert {
-		filter: invert(1) brightness(0.85);
-	}
-	.logo-item:hover img.invert {
-		filter: invert(1) brightness(1);
 	}
 
 	.fade-in {
@@ -177,10 +179,15 @@
 
 	@media (max-width: 768px) {
 		.logo-row {
-			gap: 1.5rem;
+			gap: 1rem;
 		}
 		.logo-item {
-			height: 28px;
+			height: 44px;
+			padding: 0.4rem 0.75rem;
+		}
+		.logo-item img {
+			height: 26px;
+			max-width: 90px;
 		}
 	}
 	@media (max-width: 600px) {
