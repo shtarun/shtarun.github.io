@@ -16,6 +16,29 @@ export interface ProjectEntry {
 
 export const projects: ProjectEntry[] = [
 	{
+		id: 'setmind',
+		title: 'SetMind — AI-Powered Strength Training App',
+		date: '2024 — present',
+		summary: 'Full-stack fitness app with AI coaching (Claude/GPT), offline-first sync, and cloud infrastructure. Built end-to-end from Flutter frontend to AWS backend.',
+		details: [
+			'Offline-first Flutter app with Riverpod state management, Drift/SQLite (16-table schema), and bidirectional cloud sync with last-write-wins conflict resolution',
+			'AI workout generation & post-session insights via Claude and OpenAI, with credit-based freemium model and offline rule-based fallback',
+			'AWS backend: API Gateway + Lambda (Node.js) + DynamoDB + Cognito auth — all provisioned with OpenTofu IaC',
+			'220+ exercise library, E1RM tracking, PR detection, volume analytics with fl_chart visualizations',
+			'RevenueCat subscription integration, Apple/Google Sign-In, secure token management without Amplify'
+		],
+		tags: [
+			{ label: 'Flutter', color: 'cyan' },
+			{ label: 'Claude AI', color: 'purple' },
+			{ label: 'AWS Lambda', color: 'cyan' },
+			{ label: 'DynamoDB', color: 'cyan' },
+			{ label: 'OpenTofu', color: 'purple' },
+			{ label: 'Riverpod', color: 'cyan' }
+		],
+		badge: 'Full-Stack App',
+		gridSize: 'wide'
+	},
+	{
 		id: 'masters-thesis',
 		title: 'Primary Suspension Redesign of Railway Bogie for Improved Fatigue Life',
 		date: 'jul 2019 — sept 2020',

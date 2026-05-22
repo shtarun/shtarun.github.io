@@ -10,7 +10,7 @@
 	<div class="fade-in" use:inview>
 		<SectionLabel text="projects" />
 		<h2 class="section-heading">Things I've made.</h2>
-		<p class="section-desc">Academic and engineering projects from IIT Kanpur and beyond.</p>
+		<p class="section-desc">Side projects, apps, and academic work from IIT Kanpur and beyond.</p>
 	</div>
 	<BentoGrid>
 		{#each projects as project, i}
