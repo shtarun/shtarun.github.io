@@ -1,31 +1,128 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# shtarun.github.io
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+Personal portfolio website for **Tarun Sharma**, deployed at [shtarun.github.io](https://shtarun.github.io) via GitHub Pages.
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+Built with **SvelteKit 2** + **Svelte 5**, statically rendered via `@sveltejs/adapter-static`, and deployed from a `gh-pages` branch.
 
-# Instructions
+> Originally forked from academicpages (Jekyll/Minimal Mistakes). The legacy Jekyll files (`_pages/`, `_posts/`, `_sass/`, `_config.yml`, etc.) are still present in the repo but are **not used** by the new site. The active site is entirely in `src/` and `static/`.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Running locally
 
-See more info at https://academicpages.github.io/
+```bash
+npm install
+npm run dev        # dev server at localhost:5173
+npm run build      # static build → build/
+npm run preview    # preview the built site
+```
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+## Deploying
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Build and deploy to GitHub Pages from your local machine (no GitHub Actions minutes used):
 
-# Changelog -- bugfixes and enhancements
+```bash
+npm run deploy     # builds, then pushes build/ to the gh-pages branch
+```
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+Requires GitHub Pages source to be set to **Deploy from a branch** → `gh-pages` / `/ (root)` in repo settings.
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+## Project structure
+
+### SvelteKit app (the active site)
+
+```
+src/
+├── app.html                         # HTML shell
+├── routes/
+│   ├── +page.svelte                 # Single-page layout (all sections)
+│   ├── +layout.svelte               # Root layout (Nav, global styles)
+│   └── +layout.ts                   # Prerender config
+└── lib/
+    ├── components/                   # UI components
+    │   ├── Hero.svelte              # Landing hero with photo + tagline
+    │   ├── About.svelte             # Bio section
+    │   ├── Experience.svelte        # Work timeline
+    │   ├── Education.svelte         # Education cards
+    │   ├── Skills.svelte            # Skill categories (bento grid)
+    │   ├── Projects.svelte          # Academic & personal projects
+    │   ├── Publications.svelte      # Research papers
+    │   ├── Leadership.svelte        # Campus leadership roles
+    │   ├── Contact.svelte           # Contact links
+    │   ├── Nav.svelte               # Sticky top nav
+    │   ├── BentoGrid.svelte         # Responsive grid layout
+    │   ├── BentoCard.svelte         # Animated card component
+    │   ├── Timeline.svelte          # Timeline wrapper
+    │   ├── TimelineNode.svelte      # Timeline entry
+    │   ├── Modal.svelte             # Detail modal
+    │   ├── Badge.svelte / Tag.svelte
+    │   ├── SectionLabel.svelte      # Section header
+    │   ├── GlowLine.svelte          # Decorative divider
+    │   └── ParticleCanvas.svelte    # Background particle animation
+    ├── data/                         # All content as TypeScript data files
+    │   ├── experience.ts
+    │   ├── education.ts
+    │   ├── skills.ts
+    │   ├── projects.ts
+    │   ├── publications.ts
+    │   ├── leadership.ts
+    │   └── meta.ts                  # Site metadata, social links
+    ├── actions/
+    │   └── inview.ts                # Intersection observer action
+    └── styles/
+        └── global.css               # Global styles + CSS variables
+```
+
+### Static assets
+
+```
+static/
+├── .nojekyll                        # Prevents GitHub Pages Jekyll processing
+├── files/
+│   └── Biodata_Tarun_Sharma.pdf     # Downloadable resume
+└── images/
+    ├── tarunsharma.jpeg             # Headshot used in Hero
+    ├── Photo_Self/                  # Photo variants (Diwali, PP_White, etc.)
+    ├── logos/                       # Company/institution logos
+    │   ├── twinity.png
+    │   ├── jlr.png
+    │   ├── mks.svg
+    │   ├── iitk.svg
+    │   ├── eta.png
+    │   └── tata-steel.png
+    ├── ETA_Logo_H200.png
+    └── Tata_Steel_Logo_H200.png
+```
+
+### Legacy files (not used by the new site)
+
+These are from the original academicpages Jekyll template and remain in the repo for reference:
+
+| Path | Contents |
+|------|----------|
+| `_pages/` | Jekyll markdown pages (about, cv, portfolio, etc.) |
+| `_posts/` | Template blog posts |
+| `_publications/` | Template publication entries |
+| `_projects/` | Academic project write-ups |
+| `_portfolio/` | Tata Steel / ETA internship write-ups |
+| `_teaching/` | TA role entries |
+| `_talks/` | Template talk entries |
+| `_data/` | Jekyll data (navigation, authors) |
+| `_layouts/`, `_includes/`, `_sass/` | Jekyll theme templates & styles |
+| `_config.yml`, `_config.dev.yml` | Jekyll configuration |
+| `Gemfile` | Ruby dependencies (Jekyll) |
+| `assets/` | Legacy CSS, fonts, JS |
+| `images/` | Legacy image assets (also some used by static/) |
+| `files/` | PDFs — project reports, certificates, resume |
+| `markdown_generator/` | Python/Jupyter scripts for generating Jekyll content |
+| `talkmap/` | Leaflet-based talk location map |
+
+### Other files
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Full profile & project context for Claude Code |
+| `MASTER_RESUME_TARUN_SHARMA.txt` | Plain-text master resume |
+| `Profile.pdf` | LinkedIn export |
+| `svelte.config.js` | SvelteKit config (adapter-static) |
+| `vite.config.ts` | Vite config |
+| `tsconfig.json` | TypeScript config |
+| `.github/workflows/deploy.yml` | GitHub Actions deploy (legacy — local deploy preferred) |
