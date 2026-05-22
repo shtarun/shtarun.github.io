@@ -2,7 +2,7 @@ export const meta = {
 	name: 'Tarun Sharma',
 	tagline: 'Building Digital Twin ecosystems for the future',
 	subtitle: 'Founder & CEO @ Twinity Labs · ex-JLR · IIT Kanpur',
-	bio: "I build at the crossroads of mechanical engineering, software, and AI. From redesigning railway suspensions adopted by Indian Railways, to architecting software-defined vehicle platforms at JLR, to now building Digital Twin solutions at Twinity Labs — I'm drawn to problems that live at the intersection of fields.",
+	bio: "I build at the crossroads of mechanical engineering, software, and AI. From redesigning railway suspensions adopted by Indian Railways, to architecting software-defined vehicle platforms at JLR, to shipping an AI-powered fitness app end-to-end, to now building Digital Twin solutions at Twinity Labs — I'm drawn to problems that live at the intersection of fields.",
 	email: 'work.tarunsharma@gmail.com',
 	phone: '+91-7703090720',
 	location: 'Bengaluru, India',

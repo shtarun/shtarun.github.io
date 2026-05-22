@@ -20,15 +20,18 @@ export const experience: ExperienceEntry[] = [
 		company: 'Twinity Labs',
 		date: 'sept 2025 — present',
 		location: 'Bengaluru, India',
-		summary: 'Building an applied Digital Twin solutions venture; defining product vision, early GTM, partnerships, and pilot scoping with industrial clients.',
+		summary: 'Building an applied Digital Twin solutions venture with LLM-powered tooling. Shipping AI-native products end-to-end — from Flutter apps with Claude/GPT integration to AWS serverless backends.',
 		details: [
-			'Building an applied Digital Twin solutions venture',
-			'Defining product vision, early GTM, partnerships, and pilot scoping with industrial clients'
+			'Building an applied Digital Twin solutions venture — product vision, early GTM, partnerships, and pilot scoping with industrial clients',
+			'Shipping AI-native products end-to-end: Flutter mobile apps with Claude & OpenAI integration, AWS serverless backends (Lambda, DynamoDB, Cognito), OpenTofu IaC',
+			'Leveraging agentic AI tooling (Claude Code, Cursor, vLLM, LiteLLM) across the full development lifecycle'
 		],
 		tags: [
 			{ label: 'Digital Twins', color: 'purple' },
+			{ label: 'Claude API', color: 'purple' },
+			{ label: 'Flutter', color: 'cyan' },
 			{ label: 'ML Surrogates', color: 'cyan' },
-			{ label: 'Industrial IoT', color: 'purple' }
+			{ label: 'AWS', color: 'cyan' }
 		],
 		badge: '★ current',
 		gridSize: 'wide'
