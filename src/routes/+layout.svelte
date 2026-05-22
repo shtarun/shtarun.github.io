@@ -1,7 +1,10 @@
 <script>
 	import '$lib/styles/global.css';
+	import ParticleCanvas from '$lib/components/ParticleCanvas.svelte';
 	let { children } = $props();
 </script>
+
+<ParticleCanvas />
 
 <div class="app">
 	{@render children()}
