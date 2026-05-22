@@ -35,13 +35,21 @@
 		observer.observe(node);
 		return { destroy: () => observer.disconnect() };
 	}
+
+	const logos = [
+		{ src: '/images/logos/twinity.svg', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
+		{ src: '/images/logos/mks.svg', alt: 'MKS Enterprises' },
+		{ src: '/images/logos/jlr.svg', alt: 'Jaguar Land Rover' },
+		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur' },
+		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel' },
+		{ src: '/images/logos/eta.png', alt: 'ETA Technology' }
+	];
 </script>
 
 <section class="section" id="about">
 	<div class="fade-in" use:inview>
 		<SectionLabel text="about" />
-		<h2 class="section-heading">The intersection is where it gets interesting.</h2>
-		<p class="section-desc">{meta.bio}</p>
+		<h2 class="section-heading">At a glance.</h2>
 		<div class="stats" use:startCounters>
 			<div class="stat">
 				<div class="stat-number">{Math.round($stat0)}{parsed[0].suffix}</div>
@@ -61,6 +69,23 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="logo-strip fade-in" use:inview>
+		<span class="logo-label">Built with & for</span>
+		<div class="logo-row">
+			{#each logos as logo}
+				{#if logo.url}
+					<a href={logo.url} target="_blank" rel="noopener" class="logo-item">
+						<img src={logo.src} alt={logo.alt} />
+					</a>
+				{:else}
+					<div class="logo-item">
+						<img src={logo.src} alt={logo.alt} />
+					</div>
+				{/if}
+			{/each}
+		</div>
+	</div>
 </section>
 
 <style>
@@ -73,14 +98,7 @@
 		font-family: var(--font-heading);
 		font-size: clamp(2rem, 4vw, 3rem);
 		font-weight: 700;
-		margin-bottom: 1rem;
-	}
-	.section-desc {
-		color: var(--text-secondary);
-		font-size: 1.05rem;
-		max-width: 600px;
-		margin-bottom: 3rem;
-		line-height: 1.7;
+		margin-bottom: 2rem;
 	}
 	.stats {
 		display: flex;
@@ -104,6 +122,43 @@
 		letter-spacing: 0.1em;
 		margin-top: 0.25rem;
 	}
+
+	.logo-strip {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+	.logo-label {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		display: block;
+		margin-bottom: 1.5rem;
+	}
+	.logo-row {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+		flex-wrap: wrap;
+	}
+	.logo-item {
+		height: 36px;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+		text-decoration: none;
+	}
+	.logo-item:hover {
+		opacity: 1;
+	}
+	.logo-item img {
+		height: 100%;
+		width: auto;
+		object-fit: contain;
+		filter: brightness(0.8) contrast(1.1);
+	}
+
 	.fade-in {
 		opacity: 0;
 		transform: translateY(30px);
@@ -114,6 +169,14 @@
 		transform: translateY(0);
 	}
 
+	@media (max-width: 768px) {
+		.logo-row {
+			gap: 1.5rem;
+		}
+		.logo-item {
+			height: 28px;
+		}
+	}
 	@media (max-width: 600px) {
 		.stats { gap: 1.5rem; }
 	}

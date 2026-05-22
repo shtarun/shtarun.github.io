@@ -10,10 +10,33 @@ export interface ExperienceEntry {
 	details: string[];
 	tags: { label: string; color: TagColor }[];
 	badge?: string;
+	url?: string;
 	gridSize: 'standard' | 'wide' | 'tall';
 }
 
 export const experience: ExperienceEntry[] = [
+	{
+		id: 'mks',
+		role: 'General Manager',
+		company: 'MKS Enterprises',
+		date: 'jan 2026 — present',
+		location: 'Jamshedpur, India',
+		summary: 'Leading operations for a heavy crane business serving major industrial clients — BPCL, Tata Steel, ONGC. Overseeing sales, AMC, spare parts supply, and on-ground operator training.',
+		details: [
+			'Managing end-to-end operations and P&L for a heavy crane trading and services business',
+			'Serving marquee industrial clients including BPCL, Tata Steel, ONGC, and other major enterprises',
+			'Driving sales, annual maintenance contracts (AMC), and spare parts supply across the client base',
+			'Overseeing on-ground crane operation and safety training programs',
+			'Managing vendor relationships, team operations, and strategic business development'
+		],
+		tags: [
+			{ label: 'Operations', color: 'amber' },
+			{ label: 'Heavy Equipment', color: 'amber' },
+			{ label: 'B2B Sales', color: 'cyan' }
+		],
+		badge: '★ current',
+		gridSize: 'standard'
+	},
 	{
 		id: 'twinity',
 		role: 'Founder & CEO',
@@ -34,6 +57,7 @@ export const experience: ExperienceEntry[] = [
 			{ label: 'AWS', color: 'cyan' }
 		],
 		badge: '★ current',
+		url: 'https://twinitylabs.com',
 		gridSize: 'wide'
 	},
 	{

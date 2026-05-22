@@ -21,6 +21,7 @@
 				tags={entry.tags}
 				badge={entry.badge ?? ''}
 				details={entry.details}
+				url={entry.url ?? ''}
 				gridSize={entry.gridSize}
 				delay={i * 100}
 			/>

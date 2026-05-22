@@ -10,6 +10,7 @@ export interface ProjectEntry {
 	details: string[];
 	tags: { label: string; color: TagColor }[];
 	badge?: string;
+	url?: string;
 	reportUrl?: string;
 	gridSize: 'standard' | 'wide';
 }
@@ -36,6 +37,7 @@ export const projects: ProjectEntry[] = [
 			{ label: 'Riverpod', color: 'cyan' }
 		],
 		badge: 'Full-Stack App',
+		url: 'https://twinitylabs.com/setmind',
 		gridSize: 'wide'
 	},
 	{

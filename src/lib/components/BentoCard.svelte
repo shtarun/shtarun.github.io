@@ -12,6 +12,7 @@
 		tags = [],
 		badge = '',
 		details = [],
+		url = '',
 		gridSize = 'standard',
 		delay = 0
 	}: {
@@ -21,6 +22,7 @@
 		tags?: { label: string; color: TagColor }[];
 		badge?: string;
 		details?: string[];
+		url?: string;
 		gridSize?: 'standard' | 'wide' | 'tall';
 		delay?: number;
 	} = $props();
@@ -53,6 +55,11 @@
 			{/each}
 		</div>
 	{/if}
+	{#if url}
+		<a href={url} target="_blank" rel="noopener" class="card-link-inline" onclick={(e) => e.stopPropagation()}>
+			{url.replace(/^https?:\/\//, '')} ↗
+		</a>
+	{/if}
 </div>
 
 <Modal bind:open={modalOpen}>
@@ -64,6 +71,12 @@
 			<li>{detail}</li>
 		{/each}
 	</ul>
+	{#if url}
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<a href={url} target="_blank" rel="noopener" class="card-link" onclick={(e) => e.stopPropagation()}>
+			{url.replace(/^https?:\/\//, '')} ↗
+		</a>
+	{/if}
 	{#if tags.length}
 		<div class="tags" style="margin-top: 1.5rem;">
 			{#each tags as tag}
@@ -168,6 +181,36 @@
 		left: 0;
 		color: var(--primary);
 		font-weight: 600;
+	}
+	.card-link {
+		display: inline-block;
+		margin-top: 1rem;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: var(--secondary);
+		text-decoration: none;
+		padding: 0.4rem 0.8rem;
+		border: 1px solid rgba(6, 182, 212, 0.3);
+		border-radius: 6px;
+		transition: all 0.3s ease;
+	}
+	.card-link:hover {
+		border-color: var(--secondary);
+		background: rgba(6, 182, 212, 0.1);
+		box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+	}
+	.card-link-inline {
+		display: inline-block;
+		margin-top: 0.75rem;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--secondary);
+		text-decoration: none;
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+	.card-link-inline:hover {
+		opacity: 1;
 	}
 
 	@media (max-width: 900px) {

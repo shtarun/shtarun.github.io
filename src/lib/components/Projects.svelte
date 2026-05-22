@@ -21,6 +21,7 @@
 				tags={project.tags}
 				badge={project.badge ?? ''}
 				details={project.details}
+				url={project.url ?? ''}
 				gridSize={project.gridSize}
 				delay={i * 80}
 			/>

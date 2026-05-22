@@ -31,15 +31,16 @@ export const skills: SkillCategory[] = [
 		title: 'AI Tools & LLMs',
 		tags: [
 			{ label: 'Claude API', color: 'purple' },
-			{ label: 'Claude Code', color: 'purple' },
 			{ label: 'OpenAI API', color: 'purple' },
-			{ label: 'Codex', color: 'purple' },
+			{ label: 'Claude Code', color: 'purple' },
+			{ label: 'Cursor', color: 'purple' },
+			{ label: 'LangChain', color: 'cyan' },
+			{ label: 'Hugging Face', color: 'cyan' },
 			{ label: 'vLLM', color: 'cyan' },
 			{ label: 'LiteLLM', color: 'cyan' },
-			{ label: 'LangChain', color: 'cyan' },
+			{ label: 'Codex', color: 'purple' },
+			{ label: 'Harness', color: 'cyan' },
 			{ label: 'Ollama', color: 'cyan' },
-			{ label: 'Hugging Face', color: 'cyan' },
-			{ label: 'Cursor', color: 'purple' },
 			{ label: 'Prompt Engineering', color: 'purple' }
 		]
 	},
