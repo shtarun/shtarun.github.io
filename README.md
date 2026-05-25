@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Tarun Sharma**, deployed at [shtarun.github.io](https://shtarun.github.io) via GitHub Pages.
 
-Built with **SvelteKit 2** + **Svelte 5**, statically rendered via `@sveltejs/adapter-static`, and deployed from a `gh-pages` branch.
+Built with **SvelteKit 2** + **Svelte 5**, statically rendered via `@sveltejs/adapter-static`, and deployed automatically via GitHub Actions on push to `master`.
 
 > Originally forked from academicpages (Jekyll/Minimal Mistakes). The legacy Jekyll files (`_pages/`, `_posts/`, `_sass/`, `_config.yml`, etc.) are still present in the repo but are **not used** by the new site. The active site is entirely in `src/` and `static/`.
 
@@ -17,13 +17,9 @@ npm run preview    # preview the built site
 
 ## Deploying
 
-Build and deploy to GitHub Pages from your local machine (no GitHub Actions minutes used):
+Deployment is automatic — push to `master` and GitHub Actions builds and deploys via `.github/workflows/deploy.yml`.
 
-```bash
-npm run deploy     # builds, then pushes build/ to the gh-pages branch
-```
-
-Requires GitHub Pages source to be set to **Deploy from a branch** → `gh-pages` / `/ (root)` in repo settings.
+Requires GitHub Pages source to be set to **GitHub Actions** in repo settings (Settings → Pages → Source).
 
 ## Project structure
 
@@ -125,4 +121,4 @@ These are from the original academicpages Jekyll template and remain in the repo
 | `svelte.config.js` | SvelteKit config (adapter-static) |
 | `vite.config.ts` | Vite config |
 | `tsconfig.json` | TypeScript config |
-| `.github/workflows/deploy.yml` | GitHub Actions deploy (legacy — local deploy preferred) |
+| `.github/workflows/deploy.yml` | GitHub Actions deploy (auto on push to master) |
