@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tarun Sharma — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #fcfbf8;
+    --ink: #1a1a18;
+    --muted: #6c6b64;
+    --faint: #8f8e86;
+    --accent: #0e6e6a;
+    --accent-deep: #0b5755;
+    --hair: rgba(26, 26, 24, 0.12);
+    --hair-soft: rgba(26, 26, 24, 0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hanken Grotesk", -apple-system, sans-serif;
+    font-size: 9.7px;
+    line-height: 1.34;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ---- Page frame (A4) ---- */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 13mm 15mm 12mm;
+    background: var(--paper);
+    position: relative;
+  }
+  /* thin accent spine on the left edge */
+  .page::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4mm;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 60%, #0a4543 100%);
+  }
+
+  /* ---- Header ---- */
+  header { padding-bottom: 9px; border-bottom: 1.4px solid var(--ink); }
+
+  .name {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .name .last { color: var(--accent-deep); }
+
+  .role {
+    margin-top: 5px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 10.3px;
+    letter-spacing: 0.005em;
+    color: var(--muted);
+  }
+  .role b { color: var(--accent-deep); font-weight: 600; }
+
+  .contact {
+    margin-top: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8.2px;
+    letter-spacing: 0.01em;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 9px;
+    align-items: center;
+  }
+  .contact a { color: var(--accent-deep); text-decoration: none; }
+  .contact .sep { color: var(--faint); }
+
+  /* ---- Summary ---- */
+  .summary {
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 1.42;
+    color: #34332f;
+  }
+  .summary b { color: var(--ink); font-weight: 600; }
+
+  /* ---- Section ---- */
+  section { margin-top: 11px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .sec-title {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    white-space: nowrap;
+  }
+  .sec-title::before {
+    content: "// ";
+    color: var(--accent);
+    opacity: 0.65;
+  }
+  .sec-rule { flex: 1; height: 1px; background: var(--hair); }
+
+  /* ---- Experience entry ---- */
+  .entry { margin-bottom: 8.5px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .org {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .when {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    color: var(--muted);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  .entry-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 9.8px;
+    color: var(--accent-deep);
+    letter-spacing: 0.005em;
+  }
+  .title .tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-size: 7.6px;
+    color: var(--faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .where {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  ul.bullets { list-style: none; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 11px;
+    margin-bottom: 2.2px;
+    color: #34332f;
+    line-height: 1.33;
+  }
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 4px; height: 4px;
+    background: var(--accent);
+    transform: rotate(45deg);
+  }
+  ul.bullets li b { color: var(--ink); font-weight: 600; }
+  ul.bullets li .m {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 9px;
+    color: var(--accent-deep);
+  }
+
+  /* ---- Two-up rows for education/skills density ---- */
+  .skill-row {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 8px;
+    padding: 2.6px 0;
+    border-bottom: 1px solid var(--hair-soft);
+  }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-k {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-deep);
+    padding-top: 0.5px;
+  }
+  .skill-v { color: #34332f; line-height: 1.32; }
+
+  .twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 22px;
+  }
+  .twocol .li {
+    position: relative;
+    padding-left: 11px;
+    color: #34332f;
+    line-height: 1.32;
+    margin-bottom: 2px;
+  }
+  .twocol .li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 4px; height: 4px;
+    background: var(--accent);
+    transform: rotate(45deg);
+  }
+  .twocol .li b { color: var(--ink); font-weight: 600; }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; }
+  }
+  @media screen {
+    body { padding: 24px 0; }
+    .page { box-shadow: 0 6px 40px rgba(0,0,0,0.14); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Tarun <span class="last">Sharma</span></div>
+    <div class="role">Engineer-Founder &nbsp;·&nbsp; <b>Software-Defined Vehicles</b> &nbsp;·&nbsp; Full-Stack &amp; Cloud Infrastructure</div>
+    <div class="contact">
+      <span>Bengaluru, India</span><span class="sep">·</span>
+      <a href="mailto:work.tarunsharma@gmail.com">work.tarunsharma@gmail.com</a><span class="sep">·</span>
+      <span>+91 77030 90720</span><span class="sep">·</span>
+      <a href="https://linkedin.com/in/tarunsha">linkedin.com/in/tarunsha</a><span class="sep">·</span>
+      <a href="https://github.com/shtarun">github.com/shtarun</a><span class="sep">·</span>
+      <a href="https://shtarun.github.io">shtarun.github.io</a>
+    </div>
+  </header>
+
+  <p class="summary">
+    Hands-on engineer-founder who ships across the stack — from embedded Linux and open-source infrastructure to AI-native products. Spent <b>5 years architecting software-defined vehicle platforms at Jaguar Land Rover</b>, presenting base-OS progress to the JLR and Tata Motors boards; now building a <b>Digital Twin venture</b> and shipping full-stack AI products end-to-end. I work where mechanical engineering, software, and AI intersect.
+  </p>
+
+  <section>
+    <div class="sec-head"><span class="sec-title">Experience</span><span class="sec-rule"></span></div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <span class="org">Twinity Labs</span>
+        <span class="when">Sep 2025 — Present</span>
+      </div>
+      <div class="entry-sub">
+        <span class="title">Founder &amp; CEO</span>
+        <span class="where">Bengaluru, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Founding an applied <b>Digital Twin</b> venture; shipping AI-native products end-to-end — Flutter clients, AWS serverless backends (<b>Lambda, DynamoDB, Cognito</b>), and <b>OpenTofu</b> IaC.</li>
+        <li>Built <b>SetMind</b>, an AI strength-training app: offline-first Flutter + Drift/SQLite with bidirectional cloud sync (<span class="m">16-table</span> schema), Claude/OpenAI workout generation, and RevenueCat monetization.</li>
+        <li>Drive the full development lifecycle with agentic AI tooling — Claude Code, Cursor, vLLM, LiteLLM.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <span class="org">Jaguar Land Rover</span>
+        <span class="when">Sep 2020 — Aug 2025 &nbsp;·&nbsp; 5 yrs</span>
+      </div>
+      <div class="entry-sub">
+        <span class="title">Software Engineer → Senior Software Engineer, Software-Defined Vehicles</span>
+        <span class="where">Bengaluru, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Triggered an enterprise-wide migration from commercial <b>Terraform to OpenTofu</b> and an open-source build stack (BuildBarn, Lorry, Trustable) — cutting licensing spend and hardening supply-chain security.</li>
+        <li>Orchestrated <b>zero-downtime migration of <span class="m">450+</span> GitLab repos</b> and Podman images into JLR, keeping Central Compute Module builds green throughout cutover.</li>
+        <li>Led <b>OS/BSP bring-up</b> for a safety-qualified <b>Linux</b> platform (kernel, systemd, NXP S32N silicon); drove <b>ASIL-B / ISO 26262</b> certification plans and presented to the JLR &amp; Tata Motors boards.</li>
+        <li>Built an automated <b>AWS boot-observability pipeline</b> (S3, Lambda, EC2, Redshift → Tableau) that flashes physical SoCs for data-driven regression tracking.</li>
+        <li>Architected a Python <b>Test Executable Generator</b> (factory/builder) automating execution across dSPACE / Vector / NI on <span class="m">300+</span> test assets; shipped "Mars Attacks," a FastAPI microservice.</li>
+        <li>Filed a <b>patent (pending)</b> for LSTM-based predictive maintenance; mentored 4 interns (Rust vs C++, led to PPOs) and 2 graduate engineers. <b>1st Runner-Up</b>, JLR global GDD Hackathon.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <span class="org">MKS Enterprises</span>
+        <span class="when">Jan 2026 — Present</span>
+      </div>
+      <div class="entry-sub">
+        <span class="title">General Manager <span class="tag">// concurrent</span></span>
+        <span class="where">Jamshedpur, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Lead operations and P&amp;L for a heavy-crane trading and services business serving major industrial and public-sector clients.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-title">Education</span><span class="sec-rule"></span></div>
+    <div class="entry">
+      <div class="entry-top">
+        <span class="org">Indian Institute of Technology Kanpur</span>
+        <span class="when">2015 — 2020</span>
+      </div>
+      <div class="entry-sub">
+        <span class="title">B.Tech–M.Tech Dual Degree, Mechanical Engineering</span>
+        <span class="where">Kanpur, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Master's thesis on railway bogie suspension redesign <b>adopted by Indian Railways</b> for production rollout across FIAT-type LHB coaches.</li>
+        <li>President, Association of Mechanical Engineers; Teaching Assistant for two courses (200+ students).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-title">Technical Skills</span><span class="sec-rule"></span></div>
+    <div class="skill-row">
+      <span class="skill-k">Languages</span>
+      <span class="skill-v">Python (FastAPI), Rust, C++, TypeScript, MATLAB</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-k">Infra &amp; Cloud</span>
+      <span class="skill-v">OpenTofu / Terraform, GitLab CI/CD, AWS (Lambda, DynamoDB, S3, EC2, Redshift, Cognito), GCP, Podman, BuildStream, CMake / Meson / Ninja</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-k">Systems</span>
+      <span class="skill-v">Linux kernel, systemd, embedded bring-up (NXP S32N), RTI DDS, ISO 26262 / ASIL-B, deterministic builds, SBOM / supply-chain security</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-k">AI &amp; Product</span>
+      <span class="skill-v">Claude &amp; OpenAI APIs, agentic AI tooling, LSTM / CNNs, Flutter, Riverpod, offline-first sync</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-title">Recognition &amp; Publication</span><span class="sec-rule"></span></div>
+    <div class="twocol">
+      <div class="li"><b>Publication</b> — "Primary suspension failure analysis in FIAT-type LHB bogies," <i>Engineering Failure Analysis</i>, vol. 138 (2022).</div>
+      <div class="li"><b>Patent (pending)</b> — LSTM-based predictive maintenance for in-vehicle systems (JLR).</div>
+      <div class="li"><b>1st Runner-Up</b>, JLR global GDD Hackathon (2021) — gaze-controlled HUDs, across all 6 GDD centers.</div>
+      <div class="li"><b>Asha Khanna Award</b> — national topper in Mathematics, ISC 2015 · JEE Advanced qualified.</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

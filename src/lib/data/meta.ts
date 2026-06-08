@@ -7,7 +7,7 @@ export const meta = {
 	phone: '+91-7703090720',
 	location: 'Bengaluru, India',
 	avatar: '/images/Photo_Self/Tarun_Profile_2026.png',
-	resumeUrl: '/files/Biodata_Tarun_Sharma.pdf',
+	resumeUrl: '/files/resume.pdf',
 	links: {
 		linkedin: 'https://www.linkedin.com/in/tarunsha',
 		github: 'https://github.com/shtarun',
