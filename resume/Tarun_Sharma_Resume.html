@@ -62,14 +62,16 @@
   .head-text { flex: 1; min-width: 0; }
 
   .headshot {
-    width: 82px;
-    height: 82px;
+    width: 92px;
+    height: 92px;
     flex-shrink: 0;
     object-fit: cover;
-    object-position: center 16%;
-    border-radius: 8px;
-    border: 1.5px solid var(--accent-deep);
-    box-shadow: 0 2px 10px rgba(11, 87, 85, 0.18);
+    object-position: center 18%;
+    border: none;
+    border-radius: 50%;
+    /* feathered edge — fades softly into the paper, no hard boundary */
+    -webkit-mask-image: radial-gradient(circle at 50% 47%, #000 50%, rgba(0,0,0,0.5) 66%, transparent 82%);
+    mask-image: radial-gradient(circle at 50% 47%, #000 50%, rgba(0,0,0,0.5) 66%, transparent 82%);
   }
 
   .name {
