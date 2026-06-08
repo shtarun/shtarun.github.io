@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarun Sharma — Visual System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-base: #0a0a0f;
+    --bg-shift: #0f0a1a;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(124, 58, 237, 0.3);
+    --border-glow-hover: rgba(124, 58, 237, 0.6);
+    --primary: #7c3aed;
+    --primary-glow: rgba(124, 58, 237, 0.4);
+    --secondary: #06b6d4;
+    --secondary-glow: rgba(6, 182, 212, 0.4);
+    --accent: #f59e0b;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== PARTICLE CANVAS ===== */
+  #particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== NOISE OVERLAY ===== */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===== SECTION: LABEL ===== */
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--border-glow);
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .hero-name {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 50%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    animation: glow-text 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow-text {
+    from { filter: drop-shadow(0 0 20px var(--primary-glow)); }
+    to { filter: drop-shadow(0 0 40px var(--secondary-glow)); }
+  }
+
+  .hero-tagline {
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--primary);
+    animation: typing 3s steps(50) 0.5s forwards, blink 0.75s step-end infinite;
+    width: 0;
+    max-width: fit-content;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(6, 182, 212, 0.05);
+  }
+
+  .hero-link:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    background: rgba(6, 182, 212, 0.1);
+  }
+
+  /* ===== SCROLL INDICATOR ===== */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .scroll-indicator span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .scroll-arrow {
+    width: 20px; height: 20px;
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transform: rotate(45deg);
+    opacity: 0.5;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ===== GLASSMORPHIC NAV ===== */
+  .nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav a {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+  }
+
+  .nav a:hover, .nav a.active {
+    color: var(--text-primary);
+    background: rgba(124, 58, 237, 0.15);
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  /* ===== GLOW LINE (section divider) ===== */
+  .glow-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+    margin: 0 auto;
+    max-width: 1200px;
+    opacity: 0.4;
+  }
+
+  /* ===== BENTO GRID ===== */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 1rem;
+  }
+
+  .bento-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+  }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--border-glow), transparent, var(--border-glow));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .bento-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(124, 58, 237, 0.1);
+  }
+
+  .bento-card:hover::before {
+    opacity: 1;
+  }
+
+  .bento-wide { grid-column: span 2; }
+  .bento-tall { grid-row: span 2; }
+  .bento-featured { grid-column: span 2; grid-row: span 2; }
+
+  .bento-card .card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .bento-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .bento-card .card-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .bento-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ===== TAGS ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 999px;
+    color: var(--primary);
+    background: rgba(124, 58, 237, 0.08);
+    letter-spacing: 0.03em;
+  }
+
+  .tag.cyan {
+    border-color: rgba(6, 182, 212, 0.25);
+    color: var(--secondary);
+    background: rgba(6, 182, 212, 0.08);
+  }
+
+  .tag.amber {
+    border-color: rgba(245, 158, 11, 0.25);
+    color: var(--accent);
+    background: rgba(245, 158, 11, 0.08);
+  }
+
+  /* ===== TIMELINE (Neural Pathway) ===== */
+  .timeline {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--secondary), var(--primary-glow), transparent);
+  }
+
+  .timeline-node {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-node:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+  }
+
+  .timeline-node::before {
+    content: '';
+    position: absolute;
+    left: -2.55rem;
+    top: 1.75rem;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 12px var(--primary-glow), 0 0 24px var(--primary-glow);
+    z-index: 1;
+  }
+
+  .timeline-node::after {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 2.05rem;
+    width: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+  }
+
+  .timeline-node .node-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-node h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-node .node-company {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-node ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .timeline-node li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-node li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  /* ===== FEATURED BADGE ===== */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ===== PUBLICATION CARD ===== */
+  .pub-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pub-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .pub-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-card .pub-authors {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-card .pub-venue {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--primary);
+  }
+
+  /* ===== STATS ROW ===== */
+  .stats {
+    display: flex;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-featured { grid-column: span 2; grid-row: span 1; }
+    .stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+  }
+
+  @media (max-width: 600px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-wide, .bento-featured { grid-column: span 1; }
+    .nav { display: none; }
+    .hero-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="content">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#hero" class="active">home</a>
+    <a href="#about">about</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#publications">publications</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-name">Tarun Sharma</div>
+    <div class="hero-tagline">Building Digital Twin ecosystems for the future</div>
+    <div class="hero-subtitle">Founder & CEO @ Twinity Labs &nbsp;·&nbsp; ex-JLR &nbsp;·&nbsp; IIT Kanpur</div>
+    <div class="hero-links">
+      <a href="#" class="hero-link">linkedin</a>
+      <a href="#" class="hero-link">github</a>
+      <a href="#" class="hero-link">resume.pdf</a>
+      <a href="#" class="hero-link">email</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- ABOUT / STATS -->
+  <section class="section fade-in" id="about">
+    <div class="section-label">// about</div>
+    <h2 class="section-heading">The intersection is where it gets interesting.</h2>
+    <p class="section-desc">
+      I build at the crossroads of mechanical engineering, software, and AI. From redesigning railway suspensions adopted by Indian Railways, to architecting software-defined vehicle platforms at JLR, to now building Digital Twin solutions at Twinity Labs.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years at JLR</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">450+</div>
+        <div class="stat-label">Repos Migrated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Test Assets</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Startup Founded</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- EXPERIENCE (Bento Grid) -->
+  <section class="section fade-in" id="experience">
+    <div class="section-label">// experience</div>
+    <h2 class="section-heading">Where I've built things.</h2>
+    <p class="section-desc">A career spanning mechanical R&D, automotive software, AI/ML, and now deep-tech entrepreneurship.</p>
+
+    <div class="bento-grid">
+
+      <!-- Featured: Twinity Labs -->
+      <div class="bento-card bento-wide">
+        <div class="badge">★ current</div>
+        <h3>Twinity Labs — Founder & CEO</h3>
+        <div class="card-meta">sept 2025 — present · bengaluru</div>
+        <p>Building applied Digital Twin solutions. Defining product vision, early GTM, partnerships, and pilot scoping with industrial clients.</p>
+        <div class="tags">
+          <span class="tag">Digital Twins</span>
+          <span class="tag cyan">ML Surrogates</span>
+          <span class="tag">Industrial IoT</span>
+        </div>
+      </div>
+
+      <!-- Senior SWE -->
+      <div class="bento-card bento-wide">
+        <h3>Senior SWE — Software-Defined Vehicles</h3>
+        <div class="card-meta">jan 2025 — aug 2025 · jaguar land rover</div>
+        <p>Zero-downtime migration of 450+ repos. Platform-agnostic CI/CD. Open-source IaC stack (OpenTofu, BuildBarn, Lorry).</p>
+        <div class="tags">
+          <span class="tag">OpenTofu</span>
+          <span class="tag cyan">GitLab CI</span>
+          <span class="tag">NXP S32N</span>
+        </div>
+      </div>
+
+      <!-- Innovation Champion -->
+      <div class="bento-card">
+        <div class="card-icon">💡</div>
+        <h3>Innovation Champion</h3>
+        <div class="card-meta">dec 2024 — aug 2025 · jlr</div>
+        <p>Led Digital Twin push with IndusTANTRA. Plug and Play startup collaborations.</p>
+        <div class="tags">
+          <span class="tag amber">innovation</span>
+        </div>
+      </div>
+
+      <!-- SWE SDV -->
+      <div class="bento-card bento-tall">
+        <h3>SWE — Software-Defined Vehicles</h3>
+        <div class="card-meta">nov 2023 — feb 2025 · jlr</div>
+        <p>Presented to Boards of JLR & Tata Motors. Led OS/BSP bring-up. Built deterministic platform services. AWS boot observability pipeline. ASIL-B certification leadership.</p>
+        <div class="tags">
+          <span class="tag">Linux Kernel</span>
+          <span class="tag cyan">BuildStream</span>
+          <span class="tag">ISO 26262</span>
+          <span class="tag">AWS</span>
+        </div>
+      </div>
+
+      <!-- GTP -->
+      <div class="bento-card">
+        <h3>SWE — Global Testing Platform</h3>
+        <div class="card-meta">sept 2022 — feb 2024 · jlr</div>
+        <p>Python Test Executable Generator. FastAPI microservice for GCP state. 300+ test assets across dSPACE/Vector/NI.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag cyan">FastAPI</span>
+        </div>
+      </div>
+
+      <!-- Trainee -->
+      <div class="bento-card">
+        <h3>Graduate Trainee</h3>
+        <div class="card-meta">sept 2020 — aug 2022 · jlr</div>
+        <p>Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines. Patent pending.</p>
+        <div class="tags">
+          <span class="tag">LSTM</span>
+          <span class="tag amber">patent</span>
+        </div>
+      </div>
+
+      <!-- IIT Kanpur -->
+      <div class="bento-card">
+        <h3>Project Engineer</h3>
+        <div class="card-meta">jul — sept 2020 · iit kanpur</div>
+        <p>MagRail prototype for Hyper Poland (Nevomo). Problem statement and solution framing.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- TIMELINE PREVIEW -->
+  <section class="section fade-in" id="timeline-preview">
+    <div class="section-label">// career pathway</div>
+    <h2 class="section-heading">The Neural Path</h2>
+    <p class="section-desc">Alternative timeline view — each node is a chapter.</p>
+
+    <div class="timeline">
+      <div class="timeline-node">
+        <div class="node-date">sept 2025 — present</div>
+        <h3>Founder & CEO</h3>
+        <div class="node-company">Twinity Labs</div>
+        <ul>
+          <li>Applied Digital Twin solutions venture</li>
+          <li>Product vision, GTM, industrial partnerships</li>
+        </ul>
+      </div>
+      <div class="timeline-node">
+        <div class="node-date">sept 2020 — aug 2025</div>
+        <h3>Graduate Trainee → Senior SWE</h3>
+        <div class="node-company">Jaguar Land Rover</div>
+        <ul>
+          <li>Software-Defined Vehicles platform</li>
+          <li>Global Testing Platform</li>
+          <li>Innovation Champion — Open Innovation Hub</li>
+        </ul>
+      </div>
+      <div class="timeline-node">
+        <div class="node-date">jul 2015 — jun 2020</div>
+        <h3>B.Tech-M.Tech Dual Degree</h3>
+        <div class="node-company">IIT Kanpur — Mechanical Engineering</div>
+        <ul>
+          <li>Railway bogie redesign adopted by Indian Railways</li>
+          <li>Electromagnetic actuator development</li>
+          <li>President, Association of Mechanical Engineers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- PUBLICATION -->
+  <section class="section fade-in" id="publications">
+    <div class="section-label">// publications</div>
+    <h2 class="section-heading">Research</h2>
+
+    <div class="pub-card">
+      <h3>Primary suspension failure analysis in FIAT type LHB bogies and life estimation</h3>
+      <div class="pub-authors">R. Kumar, <strong>T. Sharma</strong>, A. Shekhar, N. S. Vyas</div>
+      <div class="pub-venue">Engineering Failure Analysis, vol. 138, 2022</div>
+    </div>
+  </section>
+
+  <div class="glow-line"></div>
+
+  <!-- SKILLS (Bento Mini) -->
+  <section class="section fade-in" id="skills">
+    <div class="section-label">// skills & domains</div>
+    <h2 class="section-heading">What I work with.</h2>
+
+    <div class="bento-grid" style="grid-auto-rows: auto;">
+      <div class="bento-card bento-wide">
+        <h3>Software & DevOps</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Rust</span>
+          <span class="tag">C++</span>
+          <span class="tag cyan">FastAPI</span>
+          <span class="tag">Linux Kernel</span>
+          <span class="tag cyan">GitLab CI</span>
+          <span class="tag">OpenTofu</span>
+          <span class="tag">Podman</span>
+          <span class="tag cyan">BuildStream</span>
+          <span class="tag">CMake</span>
+        </div>
+      </div>
+      <div class="bento-card bento-wide">
+        <h3>AI / ML</h3>
+        <div class="tags">
+          <span class="tag">LSTM</span>
+          <span class="tag cyan">Neural Style Transfer</span>
+          <span class="tag">YOLO</span>
+          <span class="tag">Audio Processing</span>
+          <span class="tag cyan">Face Recognition</span>
+          <span class="tag">Spectrograms</span>
+          <span class="tag">ML Surrogates</span>
+        </div>
+      </div>
+      <div class="bento-card bento-wide">
+        <h3>Cloud & Infrastructure</h3>
+        <div class="tags">
+          <span class="tag">AWS</span>
+          <span class="tag cyan">GCP</span>
+          <span class="tag">S3</span>
+          <span class="tag">Lambda</span>
+          <span class="tag cyan">EC2</span>
+          <span class="tag">Redshift</span>
+          <span class="tag cyan">Tableau</span>
+        </div>
+      </div>
+      <div class="bento-card bento-wide">
+        <h3>Mechanical & Simulation</h3>
+        <div class="tags">
+          <span class="tag amber">ANSYS</span>
+          <span class="tag amber">Abaqus</span>
+          <span class="tag amber">COMSOL</span>
+          <span class="tag amber">SolidWorks</span>
+          <span class="tag amber">Simpack</span>
+          <span class="tag amber">MATLAB</span>
+          <span class="tag amber">FEA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- PARTICLE SYSTEM -->
+<script>
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let width, height, particles, mouse;
+
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight * 3;
+}
+
+mouse = { x: width / 2, y: height / 2 };
+window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY + window.scrollY; });
+window.addEventListener('resize', resize);
+
+function createParticles(count) {
+  particles = [];
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      radius: Math.random() * 1.5 + 0.5,
+      opacity: Math.random() * 0.5 + 0.2,
+    });
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, width, height);
+  const scrollY = window.scrollY;
+
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0) p.x = width;
+    if (p.x > width) p.x = 0;
+    if (p.y < 0) p.y = height;
+    if (p.y > height) p.y = 0;
+
+    // Draw particle
+    ctx.beginPath();
+    ctx.arc(p.x, p.y - scrollY, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(124, 58, 237, ${p.opacity})`;
+    ctx.fill();
+
+    // Draw connections
+    for (let j = i + 1; j < particles.length; j++) {
+      const p2 = particles[j];
+      const dx = p.x - p2.x;
+      const dy = p.y - p2.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y - scrollY);
+        ctx.lineTo(p2.x, p2.y - scrollY);
+        ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 120)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+
+    // Mouse interaction
+    const dxm = p.x - mouse.x;
+    const dym = p.y - mouse.y;
+    const distm = Math.sqrt(dxm * dxm + dym * dym);
+    if (distm < 150) {
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y - scrollY);
+      ctx.lineTo(mouse.x, mouse.y - scrollY);
+      ctx.strokeStyle = `rgba(124, 58, 237, ${0.3 * (1 - distm / 150)})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+
+resize();
+createParticles(150);
+draw();
+
+// Scroll-triggered fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

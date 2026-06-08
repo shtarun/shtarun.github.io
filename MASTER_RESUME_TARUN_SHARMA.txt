@@ -1,0 +1,454 @@
+================================================================================
+                         TARUN SHARMA — MASTER RESUME
+================================================================================
+
+Building Digital Twin ecosystems for the future
+
+I build at the crossroads of mechanical engineering, software, and AI. From
+redesigning railway suspensions adopted by Indian Railways, to architecting
+software-defined vehicle platforms at JLR, to shipping an AI-powered fitness
+app end-to-end, to now building Digital Twin solutions at Twinity Labs — I'm
+drawn to problems that live at the intersection of fields.
+
+================================================================================
+CONTACT & LINKS
+================================================================================
+
+Name:       Tarun Sharma
+Location:   Bengaluru, Karnataka, India
+Email:      work.tarunsharma@gmail.com / tarjsr@gmail.com
+Phone:      +91-7703090720
+LinkedIn:   linkedin.com/in/tarunsha
+GitHub:     github.com/shtarun
+Website:    shtarun.github.io
+Company:    twinitylabs.com
+Product:    twinitylabs.com/setmind
+Instagram:  instagram.com/i.am.tarun
+
+================================================================================
+EDUCATION
+================================================================================
+
+Indian Institute of Technology Kanpur                          Jul 2015 – Jun 2020
+  B.Tech-M.Tech Dual Degree, Mechanical Engineering
+
+Loyola School, Jamshedpur                                           2002 – 2015
+  Mathematics & Computer Science
+
+Languages: English (Full Professional), Hindi (Native), German (Elementary)
+
+================================================================================
+PROFESSIONAL EXPERIENCE
+================================================================================
+
+--------------------------------------------------------------------------------
+GENERAL MANAGER — MKS Enterprises
+Jan 2026 – Present | Jamshedpur, India
+--------------------------------------------------------------------------------
+Leading operations for a heavy crane business serving major industrial clients —
+BPCL, Tata Steel, ONGC. Overseeing sales, AMC, spare parts supply, and
+on-ground operator training.
+
+  - Managing end-to-end operations and P&L for a heavy crane trading and
+    services business
+  - Serving marquee industrial clients including BPCL, Tata Steel, ONGC, and
+    other major enterprises
+  - Driving sales, annual maintenance contracts (AMC), and spare parts supply
+    across the client base
+  - Overseeing on-ground crane operation and safety training programs
+  - Managing vendor relationships, team operations, and strategic business
+    development
+
+--------------------------------------------------------------------------------
+FOUNDER & CEO — Twinity Labs Private Limited
+Sept 2025 – Present | Bengaluru, India | twinitylabs.com
+--------------------------------------------------------------------------------
+Building an applied Digital Twin solutions venture with LLM-powered tooling.
+Shipping AI-native products end-to-end — from Flutter apps with Claude/GPT
+integration to AWS serverless backends.
+
+  - Building an applied Digital Twin solutions venture — product vision, early
+    GTM, partnerships, and pilot scoping with industrial clients
+  - Shipping AI-native products end-to-end: Flutter mobile apps with Claude &
+    OpenAI integration, AWS serverless backends (Lambda, DynamoDB, Cognito),
+    OpenTofu IaC
+  - Leveraging agentic AI tooling (Claude Code, Cursor, vLLM, LiteLLM) across
+    the full development lifecycle
+
+--------------------------------------------------------------------------------
+SENIOR SOFTWARE ENGINEER — Software-Defined Vehicles, Jaguar Land Rover
+Jan 2025 – Aug 2025 | Bengaluru, India
+--------------------------------------------------------------------------------
+Zero-downtime migration of 450+ repos. Platform-agnostic CI/CD. Open-source
+IaC stack (OpenTofu, BuildBarn, Lorry).
+
+  - Triggered enterprise-wide shift from commercial Terraform to OpenTofu,
+    refactoring shared modules, remote state backends, and CI workflows
+  - Integrated open-source platform enablers (Lorry for artifact promotion,
+    Trustable Software Framework for policy-as-code/SBOM/compliance, BuildBarn
+    for remote builds/caching) to cut licensing spend and harden supply-chain
+    security
+  - Orchestrated zero-downtime migration of 450+ GitLab repos, Podman base
+    images, and infra into JLR — kept Central Compute Module builds green
+  - Provisioned a fresh AWS account, aligning security, access, and cost
+    controls with program growth
+  - Released MR1 pipeline with SoC/MCU parity — shrinking duplication and
+    accelerating reuse across programs
+  - Published a standardized repo template for SDV platform integration in
+    hours instead of days
+  - Rebuilt and validated the CCMA MCU integrated image for NXP S32N board
+    under CI
+  - Secured alignment from senior stakeholders on SDV GitLab restructuring
+  - Enabled automated flashing in MR1 & MR2 for Central Compute Module's MCU
+
+--------------------------------------------------------------------------------
+INNOVATION CHAMPION — Open Innovation Hub, Jaguar Land Rover
+Dec 2024 – Aug 2025 | Bengaluru, India
+--------------------------------------------------------------------------------
+Led Digital Twin push with IndusTANTRA. Cross-functional innovation via Plug
+and Play startup collaborations.
+
+  - Championed cross-functional innovation — identified business gaps and drove
+    end-to-end startup collaborations via Plug and Play, owning discovery ->
+    scouting -> PoC -> funding
+  - Led JLR's Digital Twin push — engaged IndusTANTRA (Prof. N.S. Vyas, IIT
+    Kanpur), reduced engagement turnaround from months to under 4 weeks,
+    launched ML surrogate-modeling pilots
+
+--------------------------------------------------------------------------------
+SOFTWARE ENGINEER — Software-Defined Vehicles, Jaguar Land Rover
+Nov 2023 – Feb 2025 | Bengaluru, India
+--------------------------------------------------------------------------------
+Presented to Boards of JLR & Tata Motors. Led OS/BSP bring-up. Built
+deterministic platform services. AWS boot observability pipeline. ASIL-B
+certification leadership.
+
+  - Presented multiple times to the Boards of JLR and Tata Motors on base
+    OS/platform progress, aligning leadership on scope, risks, and milestones
+  - Drove ASIL-B certification plans for a safety-qualified Linux platform
+    aligned to ISO 26262
+  - Maintained CCMA SoC MR2 repo; integrated Podman via BuildStream and
+    standardized builds with CMake, Ninja, Meson
+  - Led board bring-up for OS and BSP integration — Linux kernel, network
+    interfaces, systemd services for stable boots
+  - Implemented a Deterministic Construction Service with Codethink for JLR's
+    custom Linux OS
+  - Integrated AWS, Alexa, and RTI DDS for in-vehicle connectivity, telemetry,
+    and IPC
+  - Built automated AWS (S3, Lambda, EC2, Redshift) boot observability pipeline
+    feeding Tableau dashboards
+  - Contributed to fault manager architecture and Safe Linux prototype
+    (SCHED_DEADLINE kernel)
+  - Co-delivered integrated image and SDK with Codethink
+  - Mentored 4 interns on Rust vs C++ trade-offs (outcomes led to PPOs),
+    managed 2 fresh graduates
+
+--------------------------------------------------------------------------------
+SOFTWARE ENGINEER — Global Testing Platform, Jaguar Land Rover
+Sept 2022 – Feb 2024 | Bengaluru, India
+--------------------------------------------------------------------------------
+Python Test Executable Generator. FastAPI microservice for GCP state. 300+ test
+assets across dSPACE/Vector/NI.
+
+  - Architected a Python-based Test Executable Generator using factory/builder
+    patterns for E2E automated test execution across dSPACE, Vector, NI on
+    300+ global test assets
+  - Developed "Mars Attacks," a FastAPI microservice for processing GCP data
+    and enhancing test environment visibility
+  - Streamlined CI/CD pipelines with validation tests and automated test
+    environment cleanup to reduce infra costs
+
+--------------------------------------------------------------------------------
+GRADUATE SOFTWARE ENGINEER TRAINEE — Jaguar Land Rover
+Sept 2020 – Aug 2022 | Bengaluru, India
+--------------------------------------------------------------------------------
+Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board.
+Audio-ML pipelines. Patent pending.
+
+  - Engaged in predictive maintenance research using LSTM, focusing on
+    spectrograms, clustering, and image processing — concept now with patent
+    office
+  - Collaborated on Virtual & Extended Reality experiences, presenting
+    innovative solutions to the Board of Directors
+  - Contributed to data pipelines, ML models for audio signal analysis, and
+    Software-in-Loop testing
+  - Provided technical mentorship, hiring process participation, and IIT Kanpur
+    recruitment liaison
+
+--------------------------------------------------------------------------------
+PROJECT ENGINEER — IIT Kanpur
+Jul 2020 – Sept 2020 | Kanpur, India
+--------------------------------------------------------------------------------
+  - Framed the problem statement and approach for a MagRail prototype project
+    by Hyper Poland (currently Nevomo) under Prof. Nalinaksh S. Vyas
+
+--------------------------------------------------------------------------------
+SUMMER INTERN — ETA Technology Pvt. Ltd.
+May 2018 – Jul 2018 | Bengaluru, India | Supervisor: Mr. Santhosh Kumar
+--------------------------------------------------------------------------------
+  - Designed an axially frictionless Hydrostatic Bearing for 60,000 kgf of
+    radial force
+  - Deployed Solidworks and AutoCAD for Friction Welding Machine components
+  - Optimized Electrical Upsetting and Metal Gathering Machine parameters
+  - Failure analysis and redesign of a broken Chamfering tool
+  - Used power recirculation to design a Four-Square Test Rig for testing 4
+    components in parallel
+
+--------------------------------------------------------------------------------
+SUMMER INTERN — R&D, Tata Steel
+May 2017 – Jul 2017 | Jamshedpur, India | Supervisor: Mr. Pundan Kumar Singh
+--------------------------------------------------------------------------------
+  - Modelled tensile specimen using Abaqus, focused on plastic region
+    deformation for high strain rates
+  - Results contributed to designing new specimen for specific tests for
+    automotive applications
+
+================================================================================
+PROJECTS
+================================================================================
+
+--------------------------------------------------------------------------------
+SetMind — AI-Powered Strength Training App (2024 – Present)
+twinitylabs.com/setmind
+--------------------------------------------------------------------------------
+Full-stack fitness app with AI coaching (Claude/GPT), offline-first sync, and
+cloud infrastructure. Built end-to-end from Flutter frontend to AWS backend.
+
+  - Offline-first Flutter app with Riverpod state management, Drift/SQLite
+    (16-table schema), and bidirectional cloud sync with last-write-wins
+    conflict resolution
+  - AI workout generation & post-session insights via Claude and OpenAI, with
+    credit-based freemium model and offline rule-based fallback
+  - AWS backend: API Gateway + Lambda (Node.js) + DynamoDB + Cognito auth —
+    all provisioned with OpenTofu IaC
+  - 220+ exercise library, E1RM tracking, PR detection, volume analytics with
+    fl_chart visualizations
+  - RevenueCat subscription integration, Apple/Google Sign-In, secure token
+    management without Amplify
+
+--------------------------------------------------------------------------------
+Master's Thesis: Primary Suspension Redesign of Railway Bogie for Improved
+Fatigue Life (Jul 2019 – Sept 2020)
+Supervisors: Prof. N.S. Vyas & Prof. C. Chandraprakash
+*** Design improvements accepted by Indian Railways for production rollout ***
+--------------------------------------------------------------------------------
+  - Redesigned primary suspension of FIAT type LHB bogies used in Indian
+    Railways
+  - Design improvements accepted by Indian Railways — rolling out in
+    production for all FIAT type bogies in LHB Coaches
+
+--------------------------------------------------------------------------------
+B.Tech Project: Design & Development of an Electromagnetic Actuator
+(Aug 2018 – Apr 2019)
+Supervisor: Prof. Mohit Law
+--------------------------------------------------------------------------------
+  - Developed 1st generation compact Moving Iron Type Linear Electromagnetic
+    Actuator for active damping (target: 100N)
+  - Peak force ~13N in 30-140 Hz range; 100N achievable with design
+    modifications
+  - Isolated natural frequency, obtained flat frequency response in 30-140 Hz
+  - Optimized spatial/functional parameters using COMSOL & FLUX for higher
+    force-to-volume ratio
+  - Designed low-friction linear Flexural Bearing on DS Solidworks with fatigue
+    analysis
+
+--------------------------------------------------------------------------------
+Railway Vehicle Dynamics: Multi-Body Analytical Approach (Jul – Dec 2018)
+Supervisor: Prof. N.S. Vyas
+--------------------------------------------------------------------------------
+  - Determined contact patch coordinates as function of lateral perturbation
+    via kinematic equations
+  - Solved equations of motion iteratively on MATLAB to estimate critical speed
+    of stability
+  - Observed railway coupler response by varying frequency, stiffness, friction,
+    and slack
+  - Developed rail-wheel pair model in Simpack; motion on straight and curved
+    tracks with uncertainties
+  - Modelled beam with moving load in ANSYS APDL for rail track motion behavior
+
+--------------------------------------------------------------------------------
+Structure Integrated Sensors & Actuators for Machine Tool Deformance
+(Dec 2018 – Feb 2019)
+Supervisor: Prof. Mohit Law
+--------------------------------------------------------------------------------
+  - Designed Tuned Mass Damped Boring Bar and Compression Holder using DS
+    Solidworks
+  - Used CutPro for modal testing of Tuned Mass Damped and Eddy Current
+    Damped Boring Bars
+  - Optimized mass and stiffness using Maple & MATLAB for chatter elimination
+    and higher Material Removal Rate
+
+--------------------------------------------------------------------------------
+FEA of Railway Couplers in LHB Coaches (Aug – Sept 2019)
+Supervisor: Prof. N.S. Vyas
+--------------------------------------------------------------------------------
+  - Provided Frontier Technologies with FE models of Railway Couplers used in
+    LHB Coaches
+  - ANSYS FEA under Buff, Draft & Bending — Von-Mises stress, total/
+    directional deformation
+  - Simulated Anti Climbing Feature under 45 tonnes of force
+
+--------------------------------------------------------------------------------
+Motion Planning of a 6 DOF Robot Arm Manipulator (Sept – Nov 2019)
+Supervisor: Prof. Ashish Dutta | Course: Robot Motion Planning
+--------------------------------------------------------------------------------
+  - MATLAB C-Space of 3DOF & 2DOF Robot arm with obstacles
+  - Sampling-based planners (A* Algorithm) for path planning
+  - Rapidly Exploring Random Trees for mobile robot path planning
+
+--------------------------------------------------------------------------------
+Algorithm Study of Constrained and Unconstrained Optimization Techniques
+(Feb – Apr 2019)
+Supervisor: Prof. Bhaskar Dasgupta | Course: Optimization Methods
+--------------------------------------------------------------------------------
+  - Analyzed Steepest Descent, DFP, BFGS, Powell's Conjugate Direction on 50
+    test functions
+  - Linear and Quadratic Programming with Simplex, Active Set, Lemke's methods
+
+--------------------------------------------------------------------------------
+Helicopter Coupled Trim Analysis — UH-60A Black Hawk (Aug – Oct 2018)
+Supervisor: Prof. Abhishek | Course: Helicopter Dynamics & Aeroelasticity
+--------------------------------------------------------------------------------
+  - Programmed numerical solution to combined blade-element/momentum theory
+    (BEMT)
+  - Newmark's algorithm for flap response equation in coupled trim solution
+  - Free flight coupled trim — control angles, shaft angles, hub loads vs
+    forward speed
+
+--------------------------------------------------------------------------------
+Output Feedback Stabilisation of Inverted Pendulum (Aug – Nov 2018)
+Supervisor: Prof. Ramprasad Potluri | Course: Basics of Modern Control
+--------------------------------------------------------------------------------
+  - Implemented output feedback stabilization of inverted pendulum on a cart
+    with uncertainties
+  - Investigated singularly perturbed closed loop system with Extended High
+    Gain Observers
+  - MATLAB and Visio simulation for steady state feedback equations
+
+--------------------------------------------------------------------------------
+Document Shredder & Automated Box Shifting Mechanism (Aug 2016 – Apr 2017)
+Supervisors: Prof. S.K. Choudhary & Prof. Rajiv Shekhar | Course: TA201A/TA202A
+--------------------------------------------------------------------------------
+  - SolidWorks 2016 and AutoCAD 2015 for mechanism modelling
+  - Designed and fabricated prototypes using CNC, Lathe, and Drilling machines
+  - Costing Report, Business Plan and Marketing Brochure
+
+--------------------------------------------------------------------------------
+Deep Learning Specialization Projects (2019)
+deeplearning.ai on Coursera
+--------------------------------------------------------------------------------
+  - Shallow neural network for binary classification (flower dots, 91.25%)
+  - Deep neural network for Cat vs Non-Cat images (80% accuracy)
+  - He initialization on 3-layer DNN (99% accuracy)
+  - Neural Style Transfer on VGG-19 (Louvre + Monet)
+  - Car Detection with YOLO
+  - Face Recognition & Verification with Keras/FaceNet and triplet loss
+
+================================================================================
+PUBLICATION
+================================================================================
+
+R. Kumar, T. Sharma, A. Shekhar, N. S. Vyas — "Primary suspension failure
+analysis in FIAT type LHB bogies and life estimation," Engineering Failure
+Analysis, vol. 138, 2022.
+
+================================================================================
+SKILLS & DOMAINS
+================================================================================
+
+Software & DevOps:
+  Python, Rust, C++, Dart, TypeScript, FastAPI, Flutter, SvelteKit,
+  Linux Kernel, GitLab CI, OpenTofu, Podman, BuildStream, CMake,
+  Riverpod, Drift/SQLite
+
+AI Tools & LLMs:
+  Claude API, OpenAI API, Claude Code, Cursor, LangChain, Hugging Face,
+  vLLM, LiteLLM, Codex, Harness, Ollama, Prompt Engineering
+
+AI / ML:
+  LSTM, Neural Style Transfer, YOLO, Audio Processing, Face Recognition,
+  Spectrograms, ML Surrogates, Predictive Maintenance, RAG, Agentic AI
+
+Cloud & Infrastructure:
+  AWS (S3, Lambda, EC2, DynamoDB, Cognito, API Gateway, Redshift), GCP,
+  Tableau, RTI DDS, RevenueCat
+
+Mechanical & Simulation:
+  ANSYS, Abaqus, COMSOL, SolidWorks, Simpack, MATLAB, FEA,
+  Multibody Dynamics
+
+Domains:
+  Software-Defined Vehicles, Digital Twins, Automotive Safety (ISO 26262,
+  ASIL-B), Predictive Maintenance, Multibody Dynamics, Machine Tool Dynamics,
+  Railway Vehicle Engineering, Robotics, Neural Networks
+
+================================================================================
+TEACHING
+================================================================================
+
+TA — Engineering Graphics (TA101A), IIT Kanpur (Jan – Jun 2020)
+  100+ first-year UG students under Prof. Anupam Saxena & Prof. Bharat Lohani
+
+TA — Advanced Mechanics of Solids (ME321A), IIT Kanpur (Aug – Nov 2019)
+  100+ junior UG students under Prof. Ishan Sharma
+
+================================================================================
+CAMPUS LEADERSHIP
+================================================================================
+
+President, Association of Mechanical Engineers, IIT Kanpur (Aug 2019 – Jun 2020)
+  - Led 15-member team managing interactions between 700+ students and 45+
+    faculties
+  - Sole incharge of 1.5 Lacs budget for yearlong workshops and Research
+    Scholars' Day
+  - Organized MathWorks & Ansys training sessions for the department
+
+Orientation Team Member, Counselling Service, IIT Kanpur (Jul – Aug 2019)
+  - Assisted core team in smooth conduction of 8-day orientation program for
+    1000+ postgraduate students
+
+Senior Executive, Entrepreneurship Cell, IIT Kanpur (Sept 2016 – Mar 2017)
+  - Piloted a 5-member team to organize Summer'17 Internship program
+  - Contacted 200+ companies for Start-up Internship Program 2017
+
+================================================================================
+AWARDS & RECOGNITION
+================================================================================
+
+1st Runner Up — JLR GDD Hackathon (Jul 2021)
+  Interactive gaze controlled HUDs. Teams from all 6 GDD centers worldwide
+  (Gaydon, Hungary, India, Manchester, Portland, Shannon).
+
+Asha Khanna Award (May 2015)
+  Nationwide top scorer in Mathematics at ISC, 2015 — Loyola School, Jamshedpur.
+
+JEE Advanced & JEE Main
+  Qualified for admission to IITs.
+
+================================================================================
+CERTIFICATIONS
+================================================================================
+
+  - Machine Learning
+  - Object-Oriented Design
+  - Convolutional Neural Networks (deeplearning.ai)
+  - Introduction to Git and GitHub
+  - Software Architecture
+
+================================================================================
+HOBBIES & INTERESTS
+================================================================================
+
+Robotics & AI, Health & Nutrition, Philosophy, Hiking & Trail Runs, Societal
+Impact, Football, Badminton, Swimming, Financial Markets, Tech Policy, Cricket,
+Basketball, Cooking, Travelling
+
+================================================================================
+QUOTE
+================================================================================
+
+"Courage is willingness to take the risk once you know the odds. Optimistic
+overconfidence means you are taking the risk because you don't know the odds.
+It's a big difference." — Daniel Kahneman
+
+================================================================================
