@@ -16,7 +16,7 @@
 			date="jan 2026 — present"
 			title="General Manager"
 			company="MKS Enterprises"
-			items={['Heavy crane trading & services business', 'Serving BPCL, Tata Steel, ONGC and major enterprises', 'Sales, AMC, spare parts & operator training']}
+			items={['Heavy crane trading & services business', 'Serving major industrial & public-sector enterprises', 'Sales, AMC, spare parts & operator training']}
 			delay={0}
 		/>
 		<TimelineNode

@@ -70,6 +70,13 @@
 		</div>
 	</div>
 
+	<div class="personal fade-in" use:inview>
+		<span class="personal-label">Off the clock</span>
+		<p class="personal-text">
+			When I'm not shipping code, I'm usually cooking my way through a new recipe — <strong>Cheeseburst pizza, vanilla ice cream, and litti-chokha</strong> top the list — or chasing the next adrenaline rush somewhere outdoors. I rotate through cricket, football, basketball, and swimming, with tennis, archery, and shooting still on the someday list. And yes, there's a stack of novels on my shelf I keep promising myself I'll actually finish.
+		</p>
+	</div>
+
 	<div class="logo-strip fade-in" use:inview>
 		<span class="logo-label">Built with & for</span>
 		<div class="logo-row">
@@ -121,6 +128,31 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		margin-top: 0.25rem;
+	}
+
+	.personal {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+	.personal-label {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		display: block;
+		margin-bottom: 1.25rem;
+	}
+	.personal-text {
+		color: var(--text-secondary);
+		font-size: 1.05rem;
+		line-height: 1.7;
+		max-width: 760px;
+	}
+	.personal-text strong {
+		color: var(--text-primary);
+		font-weight: 600;
 	}
 
 	.logo-strip {

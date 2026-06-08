@@ -21,10 +21,10 @@ export const experience: ExperienceEntry[] = [
 		company: 'MKS Enterprises',
 		date: 'jan 2026 — present',
 		location: 'Jamshedpur, India',
-		summary: 'Leading operations for a heavy crane business serving major industrial clients — BPCL, Tata Steel, ONGC. Overseeing sales, AMC, spare parts supply, and on-ground operator training.',
+		summary: 'Leading operations for a heavy crane business serving major industrial and public-sector clients. Overseeing sales, AMC, spare parts supply, and on-ground operator training.',
 		details: [
 			'Managing end-to-end operations and P&L for a heavy crane trading and services business',
-			'Serving marquee industrial clients including BPCL, Tata Steel, ONGC, and other major enterprises',
+			'Serving marquee industrial and public-sector enterprises across the client base',
 			'Driving sales, annual maintenance contracts (AMC), and spare parts supply across the client base',
 			'Overseeing on-ground crane operation and safety training programs',
 			'Managing vendor relationships, team operations, and strategic business development'
