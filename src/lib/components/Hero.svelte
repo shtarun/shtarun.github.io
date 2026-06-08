@@ -32,7 +32,7 @@
 	<div class="hero-main">
 		<div class="hero-photo">
 			<div class="photo-frame">
-				<img src="/images/tarunsharma.jpeg" alt="Tarun Sharma" />
+				<img src={meta.avatar} alt="Tarun Sharma" />
 			</div>
 		</div>
 		<div class="hero-text">

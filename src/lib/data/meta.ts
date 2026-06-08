@@ -6,7 +6,7 @@ export const meta = {
 	email: 'work.tarunsharma@gmail.com',
 	phone: '+91-7703090720',
 	location: 'Bengaluru, India',
-	avatar: '/images/Photo_Self/Diwali_NoBackground_Sq.png',
+	avatar: '/images/Photo_Self/Tarun_Profile_2026.png',
 	resumeUrl: '/files/Biodata_Tarun_Sharma.pdf',
 	links: {
 		linkedin: 'https://www.linkedin.com/in/tarunsha',

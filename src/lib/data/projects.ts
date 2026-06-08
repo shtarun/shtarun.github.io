@@ -70,13 +70,15 @@ export const projects: ProjectEntry[] = [
 			'Peak force ~13N in 30–140 Hz range; 100N achievable with design modifications',
 			'Isolated natural frequency, obtained flat frequency response in 30–140 Hz',
 			'Optimized spatial/functional parameters using COMSOL & FLUX for higher force-to-volume ratio',
-			'Designed low-friction linear Flexural Bearing on DS Solidworks with fatigue analysis'
+			'Designed low-friction linear Flexural Bearing on DS Solidworks with fatigue analysis',
+			"Exhibited at TechEx '19, IIT Delhi"
 		],
 		tags: [
 			{ label: 'COMSOL', color: 'amber' },
 			{ label: 'SolidWorks', color: 'amber' },
 			{ label: 'MATLAB', color: 'amber' }
 		],
+		badge: "Exhibited at TechEx '19, IIT Delhi",
 		reportUrl: '/files/Project_Reports/BTP_Final_Report.pdf',
 		gridSize: 'wide'
 	},

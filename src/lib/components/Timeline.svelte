@@ -13,25 +13,32 @@
 	<div class="timeline">
 		<div class="timeline-line"></div>
 		<TimelineNode
+			date="jan 2026 — present"
+			title="General Manager"
+			company="MKS Enterprises"
+			items={['Heavy crane trading & services business', 'Serving BPCL, Tata Steel, ONGC and major enterprises', 'Sales, AMC, spare parts & operator training']}
+			delay={0}
+		/>
+		<TimelineNode
 			date="sept 2025 — present"
 			title="Founder & CEO"
 			company="Twinity Labs"
 			items={['Applied Digital Twin solutions venture', 'Product vision, GTM, industrial partnerships']}
-			delay={0}
+			delay={150}
 		/>
 		<TimelineNode
 			date="sept 2020 — aug 2025"
 			title="Graduate Trainee → Senior SWE"
 			company="Jaguar Land Rover"
 			items={['Software-Defined Vehicles platform', 'Global Testing Platform', 'Innovation Champion — Open Innovation Hub', 'Predictive maintenance research (LSTM, patent pending)']}
-			delay={150}
+			delay={300}
 		/>
 		<TimelineNode
 			date="jul 2015 — jun 2020"
 			title="B.Tech-M.Tech Dual Degree"
 			company="IIT Kanpur — Mechanical Engineering"
 			items={['Railway bogie redesign adopted by Indian Railways', 'Electromagnetic actuator development', 'President, Association of Mechanical Engineers']}
-			delay={300}
+			delay={450}
 		/>
 	</div>
 </section>
