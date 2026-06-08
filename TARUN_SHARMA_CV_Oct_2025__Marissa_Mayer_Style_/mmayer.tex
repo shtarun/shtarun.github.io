@@ -1,0 +1,363 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.4, 30 Jul 2025) written by LianTze Lim (liantze@gmail.com), based on the
+% CV created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,withhypeper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" mmayer.tex
+\iftutex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryea}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Tarun Sharma}
+\tagline{Founder \& CEO}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+\photoR{2.5cm}{tarunsharma}
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  \email{work.tarunsharma@gmail.com}
+  \phone{+91-7703090720}
+  % \mailaddress{Address, Street, 00000 County}
+  \location{Bengaluru, India}
+  \linkedin{tarunsha}
+  % \twitter{@marissamayer}
+  % \xtwitter{@marissamayer}
+  \homepage{shtarun.github.io}
+%   \github{github.com/mmayer} % I'm just making this up though.
+%   \orcid{0000-0000-0000-0000} % Obviously making this up too.
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  %% \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+	%%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Professional Experience}
+
+\cvevent{Founder \& CEO}{Twinity Labs Private Limited}{Sept 25 -- Ongoing}{Bengaluru, India}
+% \begin{itemize}
+ Building an applied Digital Twin solutions venture; defining product vision, early GTM, partnerships, and pilot scoping with industrial clients
+% \end{itemize}
+
+\divider
+
+\cvevent{Senior Software Engineer, Software-Defined Vehicles}{Jaguar Land Rover}{Jan 25 -- Aug 25}{Bengaluru, India}
+\begin{itemize}
+\item Orchestrated a zero-downtime cutover—migrated 450+ GitLab repos, Podman images \& infra into JLR; kept Central Compute Module builds green
+\item Delivered a platform-agnostic MR1 CI/CD pipeline with SoC/MCU parity, cutting duplication and accelerating cross-program reuse
+\item Standardized onboarding with a ready-to-use repo template + automated MCU flashing (MR1/MR2), reducing app/device integration to hours
+\item Stood up a guarded AWS account and aligned stakeholders on SDV GitLab ownership; rebuilt/validated the CCMA MCU image for NXP S32N under CI
+\end{itemize}
+
+\divider
+
+\cvevent{Innovation Champion - Open Innovation Hub}{Jaguar Land Rover}{Dec 24 -- Aug 25}{Bengaluru, India}
+
+
+\begin{itemize}
+\item Championed cross-functional innovation—identified business gaps and drove end-to-end startup collaborations via Plug and Play, owning discovery → scouting → PoC → funding
+\item Led JLR’s Digital Twin push—directly engaged IndusTANTRA, bypassed channels to cut turnaround to <4 weeks and launched ML surrogate-modeling pilots with senior leadership buy-in
+\end{itemize}
+
+\divider
+
+\cvevent{Software Engineer, Software-Defined Vehicles}{Jaguar Land Rover}{Nov 23 -- Jan 25}{Bengaluru, India}
+
+\begin{itemize}
+\item Executive-facing delivery: Presented multiple times to the Boards of JLR and Tata Motors on base OS/platform progress, aligning leadership on scope, risks, and milestones.
+\item Executive-facing delivery: Presented to JLR and Tata Motors boards, aligned scope, risks, and milestones, and drove ASIL-B certification plans for a safety-qualified Linux platform.
+\item Platform and bring-up: Owned CCMA SoC repositories; standardized builds using BuildStream, CMake, Ninja, and Meson; led OS and BSP bring-up for stable, repeatable boots.
+\item Determinism, connectivity, and observability: Co-built the Deterministic Construction Service; integrated AWS, Alexa, and RTI-DDS; automated boot KPIs to Tableau; shipped image and SDK; mentored interns (PPOs).
+\end{itemize}
+
+\divider
+
+\cvevent{Software Engineer, Global Testing Platform}{Jaguar Land Rover}{Sept 22 -- Feb 24}{Bengaluru, India}
+
+\begin{itemize}
+\item Built a keyword-driven global testing platform; architected a Python Test Executable Generator (factory/builder) to run E2E tests across dSPACE/Vector/NI on 300+ assets.
+\item Delivered a FastAPI microservice to surface GCP environment state; tightened CI/CD with validation and auto-cleanup, boosting visibility and cutting infra costs.
+\end{itemize}
+
+\divider
+
+\cvevent{Graduate Software Engineer Trainee}{Jaguar Land Rover}{Sept 20 -- Aug 22}{Bengaluru, India}
+
+\begin{itemize}
+\item Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing.
+\item Built VR/XR demos for the Board; developed audio-ML pipelines; mentored/hired talent and partnered with IIT Kanpur.
+\end{itemize}
+
+\divider
+
+\cvevent{Project Engineer}{Indian Institute of Technology Kanpur}{Jul 20 -- Sept 20}{Kanpur, India}
+
+\begin{itemize}
+\item Framed the problem statement and approach for the solution to the project by Hyper Poland(currently Nevemo), involving the prototype of a MagRail
+\end{itemize}
+
+\divider
+
+
+\cvevent{Summer Internship}{ETA Technology Pvt. Ltd.}{May 18 -- July 18}{Bengaluru, India}
+\begin{itemize}
+\item Worked on frictionless Hydrostatic Bearing, Friction Welding Machine, Electrical Upsetting and Metal Gathering Machine, Chamfering tool
+\end{itemize}
+
+\divider
+
+\cvevent{Summer Internship}{Research \& Development, Tata Steel}{May 17 -- Jul 17}{Jamshedpur, India}
+
+\begin{itemize}
+\item Modelled a tensile specimen using Abaqus \& learnt about the uni-axial and bi-axial tensile testing machines
+\item The tensile test results contributed in designing new specimen for specific tests for automotive applications
+\end{itemize}
+
+\cvsection{Awards \& Recognition}
+\cvevent{1st Runner Up, JLR GDD Hackathon}{}{Jul 21}{Jaguar Land Rover}
+For interactive gaze controlled HUDs
+
+\divider
+\cvevent{Asha Khanna Award}{}{May 15}{Loyola School, Jamshedpur}
+
+Nationwide top scorer in Mathematics at ISC, 2015
+
+\cvsection{Hobbies \& Interests}
+% \textbf{\faGem\ Robotics}\\
+% \divider
+% \textbf{\faGem\ Health \& Nutrition}\\
+% \divider
+% \textbf{\faGem\ Philosophy}\\
+% \divider
+% \textbf{\faGem\ Societal Development}
+% Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
+
+\cvtag{Robotics \& AI}
+\cvtag{Health \& Nutrition}
+\cvtag{Philosophy}
+\cvtag{Hiking \& Trail Runs}
+\cvtag{Societal Impact}
+\cvtag{Football}
+\cvtag{Badminton}
+\cvtag{Swimming}
+\cvtag{Financial Markets}
+\cvtag{Tech Policy}
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% % Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/13em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/11em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/11em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ \mbox{employees} that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+% \newpage
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{B.Tech - M.Tech. Dual Degree}{Mechanical Engineering, IIT Kanpur}{Jul 15 -- Jun 20}{}
+
+\cvsection{Publications}
+\printinfo{\faFile*[regular]} \emph{R. Kumar, \textbf{T. Sharma}, A. Shekhar, N. S. Vyas}
+\noindent "Primary suspension failure analysis in FIAT type LHB bogies and life estimation"\\
+\textit{\textbf{Engineering Failure Analysis}, vol. 138, 2022}\\
+
+
+\cvsection{Projects}
+\cvevent{Interactive Gaze Controlled Heads Up Display}{}{Jul 21}{Jaguar Land Rover}
+\begin{itemize}
+\item Teams participated from all over the 6 GDD centers(Gaydon, Hungary, India, Manchester, Portland, Shannon) of JLR.
+\item 1st Runners up in JLR GDD Hackathon ‘21 
+\end{itemize}
+\divider
+\cvevent{Improvement in Fatigue Life of FIAT Type LHB Bogies used in Indian Railways}{}{Jul 19 -- Sep 20}{IIT Kanpur}
+\divider
+\cvevent{Motion Planning of a 6 DOF Robot Arm Manipulator}{}{Sep 19 -- Nov 19}{IIT Kanpur}
+\divider
+\cvevent{FEA of Railway Couplers used in LHB Bogies}{}{Aug 19 -- Sep 19}{IIT Kanpur}
+\divider
+\cvevent{Algorithm Study of different Constrained and Unconstrained Optimization techniques}{}{Feb 19 -- Apr 19}{IIT Kanpur}
+\divider
+\cvevent{Design \& Development of an Electromagnetic Actuator}{}{Aug 18 -- Apr 19}{IIT Kanpur}
+\divider
+\cvevent{Structure Integrated Sensors and Actuators to Monitor and Renew Machine Tool Performance}{}{Dec 18 -- Feb 19}{IIT Kanpur}
+\divider
+\cvevent{Modelling of Railway Vehicle Dynamics: A Multi-Body Analytical Approach}{}{Jul 18 -- Dec 18}{IIT Kanpur}
+\divider
+\cvevent{Output feedback stabilisation of inverted pendulum}{}{Aug 18 -- Nov 18}{IIT Kanpur}
+\divider
+\cvevent{Helicopter Coupled Trim Analysis for a UH-60A Black Hawk}{}{Aug 18 -- Oct 18}{IIT Kanpur}
+\divider
+\cvevent{Document Shredder \& Automated Box Shifting Mechanism}{}{Aug 16 -- Apr 17}{IIT Kanpur}
+
+
+
+\cvsection{Teaching \& Campus Leadership}
+
+\cvevent{Teaching Assistant, Engineering Graphics}{Indian Institute of Technology Kanpur}{Jul 20 -- Sept 20}{}
+
+
+\divider
+\cvevent{President}{Association of Mechanical Engineers, IIT Kanpur}{Aug 19 -- Jun 20}{}
+
+% \begin{itemize}
+% \item Organized MathWorks \& Ansys trainings (dynamics/statics/FSI), led student tech sessions, and managed ~\faRupeeSign 3 lakh society budget with department administration.
+% \end{itemize}
+
+\divider
+
+\cvevent{Teaching Assistant, Advanced Mechanics of Solids}{Indian Institute of Technology Kanpur}{Aug 19 -- Nov 19}{}
+
+\divider
+
+\cvevent{Orientation Team Member}{Counselling Service, IIT Kanpur}{Jul 19 -- Aug 19}{}
+% \begin{itemize}
+% \item Assisted core team in the smooth conduction of 8-day long orientation program for 1000+ postgraduate students
+% \end{itemize}
+\divider
+
+\cvevent{Senior Executive}{Entrepreneurship Cell, IIT Kanpur}{Sept 16 -- Mar 17}{}
+
+
+
+
+\newpage
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address Line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address Line 2}
+
+\end{paracol}
+
+\end{document}

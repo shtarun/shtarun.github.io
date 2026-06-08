@@ -1,0 +1,431 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "home" [ref=e6] [cursor=pointer]:
+        - /url: "#hero"
+      - link "about" [ref=e7] [cursor=pointer]:
+        - /url: "#about"
+      - link "experience" [ref=e8] [cursor=pointer]:
+        - /url: "#experience"
+      - link "projects" [ref=e9] [cursor=pointer]:
+        - /url: "#projects"
+      - link "publications" [ref=e10] [cursor=pointer]:
+        - /url: "#publications"
+      - link "contact" [ref=e11] [cursor=pointer]:
+        - /url: "#contact"
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - img "Tarun Sharma" [ref=e16]
+      - generic [ref=e17]:
+        - heading "Tarun Sharma" [level=1] [ref=e18]
+        - generic [ref=e19]: "|"
+        - paragraph [ref=e20]: Founder & CEO @ Twinity Labs · ex-JLR · IIT Kanpur
+        - paragraph [ref=e21]: I build at the crossroads of mechanical engineering, software, and AI. From redesigning railway suspensions adopted by Indian Railways, to architecting software-defined vehicle platforms at JLR, to shipping an AI-powered fitness app end-to-end, to now building Digital Twin solutions at Twinity Labs — I'm drawn to problems that live at the intersection of fields.
+        - generic [ref=e22]:
+          - link "linkedin" [ref=e23] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/tarunsha
+          - link "github" [ref=e24] [cursor=pointer]:
+            - /url: https://github.com/shtarun
+          - link "twinitylabs.com" [ref=e25] [cursor=pointer]:
+            - /url: https://twinitylabs.com
+          - link "resume.pdf" [ref=e26] [cursor=pointer]:
+            - /url: /files/Biodata_Tarun_Sharma.pdf
+          - link "email" [ref=e27] [cursor=pointer]:
+            - /url: mailto:work.tarunsharma@gmail.com
+    - generic [ref=e29]: scroll
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]: // about
+      - heading "At a glance." [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: 0+
+          - generic [ref=e38]: Years at JLR
+        - generic [ref=e39]:
+          - generic [ref=e40]: 0+
+          - generic [ref=e41]: Repos Migrated
+        - generic [ref=e42]:
+          - generic [ref=e43]: 0+
+          - generic [ref=e44]: Test Assets
+        - generic [ref=e45]:
+          - generic [ref=e46]: "0"
+          - generic [ref=e47]: Startup Founded
+    - generic [ref=e48]:
+      - generic [ref=e49]: Off the clock
+      - paragraph [ref=e50]:
+        - text: When I'm not shipping code, I'm usually cooking my way through a new recipe —
+        - strong [ref=e51]: Cheeseburst pizza, vanilla ice cream, and litti-chokha
+        - text: top the list — or chasing the next adrenaline rush somewhere outdoors. I rotate through cricket, football, basketball, and swimming, with tennis, archery, and shooting still on the someday list. And yes, there's a stack of novels on my shelf I keep promising myself I'll actually finish.
+    - generic [ref=e52]:
+      - generic [ref=e53]: Built with & for
+      - generic [ref=e54]:
+        - link "Twinity Labs" [ref=e55] [cursor=pointer]:
+          - /url: https://twinitylabs.com
+          - img "Twinity Labs" [ref=e56]
+        - img "MKS Enterprises" [ref=e58]
+        - img "Jaguar Land Rover" [ref=e60]
+        - img "IIT Kanpur" [ref=e62]
+        - img "Tata Steel" [ref=e64]
+        - img "ETA Technology" [ref=e66]
+  - generic [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]: // experience
+      - heading "Where I've built things." [level=2] [ref=e70]
+      - paragraph [ref=e71]: A career spanning mechanical R&D, automotive software, AI/ML, and deep-tech entrepreneurship.
+    - generic [ref=e72]:
+      - button "★ current General Manager — MKS Enterprises jan 2026 — present · Jamshedpur, India Leading operations for a heavy crane business serving major industrial clients — BPCL, Tata Steel, ONGC. Overseeing sales, AMC, spare parts supply, and on-ground operator training. Operations Heavy Equipment B2B Sales" [ref=e73]:
+        - generic [ref=e74]: ★ current
+        - heading "General Manager — MKS Enterprises" [level=3] [ref=e75]
+        - generic [ref=e76]: jan 2026 — present · Jamshedpur, India
+        - paragraph [ref=e77]: Leading operations for a heavy crane business serving major industrial clients — BPCL, Tata Steel, ONGC. Overseeing sales, AMC, spare parts supply, and on-ground operator training.
+        - generic [ref=e78]:
+          - generic [ref=e79]: Operations
+          - generic [ref=e80]: Heavy Equipment
+          - generic [ref=e81]: B2B Sales
+      - button "★ current Founder & CEO — Twinity Labs sept 2025 — present · Bengaluru, India Building an applied Digital Twin solutions venture with LLM-powered tooling. Shipping AI-native products end-to-end — from Flutter apps with Claude/GPT integration to AWS serverless backends. Digital Twins Claude API Flutter ML Surrogates AWS twinitylabs.com ↗" [ref=e82]:
+        - generic [ref=e83]: ★ current
+        - heading "Founder & CEO — Twinity Labs" [level=3] [ref=e84]
+        - generic [ref=e85]: sept 2025 — present · Bengaluru, India
+        - paragraph [ref=e86]: Building an applied Digital Twin solutions venture with LLM-powered tooling. Shipping AI-native products end-to-end — from Flutter apps with Claude/GPT integration to AWS serverless backends.
+        - generic [ref=e87]:
+          - generic [ref=e88]: Digital Twins
+          - generic [ref=e89]: Claude API
+          - generic [ref=e90]: Flutter
+          - generic [ref=e91]: ML Surrogates
+          - generic [ref=e92]: AWS
+        - link "twinitylabs.com ↗" [ref=e93] [cursor=pointer]:
+          - /url: https://twinitylabs.com
+      - button "Senior SWE — Software-Defined Vehicles — Jaguar Land Rover jan 2025 — aug 2025 · Bengaluru, India Zero-downtime migration of 450+ repos. Platform-agnostic CI/CD. Open-source IaC stack (OpenTofu, BuildBarn, Lorry). OpenTofu GitLab CI NXP S32N" [ref=e94]:
+        - heading "Senior SWE — Software-Defined Vehicles — Jaguar Land Rover" [level=3] [ref=e95]
+        - generic [ref=e96]: jan 2025 — aug 2025 · Bengaluru, India
+        - paragraph [ref=e97]: Zero-downtime migration of 450+ repos. Platform-agnostic CI/CD. Open-source IaC stack (OpenTofu, BuildBarn, Lorry).
+        - generic [ref=e98]:
+          - generic [ref=e99]: OpenTofu
+          - generic [ref=e100]: GitLab CI
+          - generic [ref=e101]: NXP S32N
+      - button "Innovation Champion — Open Innovation Hub — Jaguar Land Rover dec 2024 — aug 2025 · Bengaluru, India Led Digital Twin push with IndusTANTRA. Cross-functional innovation via Plug and Play startup collaborations. Innovation Digital Twins" [ref=e102]:
+        - heading "Innovation Champion — Open Innovation Hub — Jaguar Land Rover" [level=3] [ref=e103]
+        - generic [ref=e104]: dec 2024 — aug 2025 · Bengaluru, India
+        - paragraph [ref=e105]: Led Digital Twin push with IndusTANTRA. Cross-functional innovation via Plug and Play startup collaborations.
+        - generic [ref=e106]:
+          - generic [ref=e107]: Innovation
+          - generic [ref=e108]: Digital Twins
+      - button "SWE — Software-Defined Vehicles — Jaguar Land Rover nov 2023 — feb 2025 · Bengaluru, India Presented to Boards of JLR & Tata Motors. Led OS/BSP bring-up. Built deterministic platform services. AWS boot observability pipeline. ASIL-B certification leadership. Linux Kernel BuildStream ISO 26262 AWS" [ref=e109]:
+        - heading "SWE — Software-Defined Vehicles — Jaguar Land Rover" [level=3] [ref=e110]
+        - generic [ref=e111]: nov 2023 — feb 2025 · Bengaluru, India
+        - paragraph [ref=e112]: Presented to Boards of JLR & Tata Motors. Led OS/BSP bring-up. Built deterministic platform services. AWS boot observability pipeline. ASIL-B certification leadership.
+        - generic [ref=e113]:
+          - generic [ref=e114]: Linux Kernel
+          - generic [ref=e115]: BuildStream
+          - generic [ref=e116]: ISO 26262
+          - generic [ref=e117]: AWS
+      - button "SWE — Global Testing Platform — Jaguar Land Rover sept 2022 — feb 2024 · Bengaluru, India Python Test Executable Generator. FastAPI microservice for GCP state. 300+ test assets across dSPACE/Vector/NI. Python FastAPI" [ref=e118]:
+        - heading "SWE — Global Testing Platform — Jaguar Land Rover" [level=3] [ref=e119]
+        - generic [ref=e120]: sept 2022 — feb 2024 · Bengaluru, India
+        - paragraph [ref=e121]: Python Test Executable Generator. FastAPI microservice for GCP state. 300+ test assets across dSPACE/Vector/NI.
+        - generic [ref=e122]:
+          - generic [ref=e123]: Python
+          - generic [ref=e124]: FastAPI
+      - button "Graduate Trainee — Jaguar Land Rover sept 2020 — aug 2022 · Bengaluru, India Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines. Patent pending. LSTM Patent" [ref=e125]:
+        - heading "Graduate Trainee — Jaguar Land Rover" [level=3] [ref=e126]
+        - generic [ref=e127]: sept 2020 — aug 2022 · Bengaluru, India
+        - paragraph [ref=e128]: Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines. Patent pending.
+        - generic [ref=e129]:
+          - generic [ref=e130]: LSTM
+          - generic [ref=e131]: Patent
+      - button "Project Engineer — IIT Kanpur jul — sept 2020 · Kanpur, India MagRail prototype for Hyper Poland (Nevomo). Problem statement and solution framing under Prof. N.S. Vyas. MagRail" [ref=e132]:
+        - heading "Project Engineer — IIT Kanpur" [level=3] [ref=e133]
+        - generic [ref=e134]: jul — sept 2020 · Kanpur, India
+        - paragraph [ref=e135]: MagRail prototype for Hyper Poland (Nevomo). Problem statement and solution framing under Prof. N.S. Vyas.
+        - generic [ref=e137]: MagRail
+      - button "Summer Intern — ETA Technology may — jul 2018 · Bengaluru, India Hydrostatic bearing design (60,000 kgf), friction welding machine components, failure analysis. SolidWorks FEA" [ref=e138]:
+        - heading "Summer Intern — ETA Technology" [level=3] [ref=e139]
+        - generic [ref=e140]: may — jul 2018 · Bengaluru, India
+        - paragraph [ref=e141]: Hydrostatic bearing design (60,000 kgf), friction welding machine components, failure analysis.
+        - generic [ref=e142]:
+          - generic [ref=e143]: SolidWorks
+          - generic [ref=e144]: FEA
+      - button "Summer Intern — R&D, Tata Steel may — jul 2017 · Jamshedpur, India Tensile specimen modelling in Abaqus. Results contributed to new specimen design for automotive applications. Abaqus" [ref=e145]:
+        - heading "Summer Intern — R&D, Tata Steel" [level=3] [ref=e146]
+        - generic [ref=e147]: may — jul 2017 · Jamshedpur, India
+        - paragraph [ref=e148]: Tensile specimen modelling in Abaqus. Results contributed to new specimen design for automotive applications.
+        - generic [ref=e150]: Abaqus
+  - generic [ref=e151]:
+    - generic [ref=e152]:
+      - generic [ref=e153]: // career pathway
+      - heading "The Neural Path" [level=2] [ref=e154]
+      - paragraph [ref=e155]: A chronological journey through the chapters.
+    - generic [ref=e156]:
+      - generic [ref=e158]:
+        - generic [ref=e159]: jan 2026 — present
+        - heading "General Manager" [level=3] [ref=e160]
+        - generic [ref=e161]: MKS Enterprises
+        - list [ref=e162]:
+          - listitem [ref=e163]: › Heavy crane trading & services business
+          - listitem [ref=e164]: › Serving BPCL, Tata Steel, ONGC and major enterprises
+          - listitem [ref=e165]: › Sales, AMC, spare parts & operator training
+      - generic [ref=e166]:
+        - generic [ref=e167]: sept 2025 — present
+        - heading "Founder & CEO" [level=3] [ref=e168]
+        - generic [ref=e169]: Twinity Labs
+        - list [ref=e170]:
+          - listitem [ref=e171]: › Applied Digital Twin solutions venture
+          - listitem [ref=e172]: › Product vision, GTM, industrial partnerships
+      - generic [ref=e173]:
+        - generic [ref=e174]: sept 2020 — aug 2025
+        - heading "Graduate Trainee → Senior SWE" [level=3] [ref=e175]
+        - generic [ref=e176]: Jaguar Land Rover
+        - list [ref=e177]:
+          - listitem [ref=e178]: › Software-Defined Vehicles platform
+          - listitem [ref=e179]: › Global Testing Platform
+          - listitem [ref=e180]: › Innovation Champion — Open Innovation Hub
+          - listitem [ref=e181]: › Predictive maintenance research (LSTM, patent pending)
+      - generic [ref=e182]:
+        - generic [ref=e183]: jul 2015 — jun 2020
+        - heading "B.Tech-M.Tech Dual Degree" [level=3] [ref=e184]
+        - generic [ref=e185]: IIT Kanpur — Mechanical Engineering
+        - list [ref=e186]:
+          - listitem [ref=e187]: › Railway bogie redesign adopted by Indian Railways
+          - listitem [ref=e188]: › Electromagnetic actuator development
+          - listitem [ref=e189]: › President, Association of Mechanical Engineers
+  - generic [ref=e190]:
+    - generic [ref=e191]:
+      - generic [ref=e192]: // projects
+      - heading "Things I've made." [level=2] [ref=e193]
+      - paragraph [ref=e194]: Side projects, apps, and academic work from IIT Kanpur and beyond.
+    - generic [ref=e195]:
+      - button "Full-Stack App SetMind — AI-Powered Strength Training App 2024 — present Full-stack fitness app with AI coaching (Claude/GPT), offline-first sync, and cloud infrastructure. Built end-to-end from Flutter frontend to AWS backend. Flutter Claude AI AWS Lambda DynamoDB OpenTofu Riverpod twinitylabs.com/setmind ↗" [ref=e196]:
+        - generic [ref=e197]: Full-Stack App
+        - heading "SetMind — AI-Powered Strength Training App" [level=3] [ref=e198]
+        - generic [ref=e199]: 2024 — present
+        - paragraph [ref=e200]: Full-stack fitness app with AI coaching (Claude/GPT), offline-first sync, and cloud infrastructure. Built end-to-end from Flutter frontend to AWS backend.
+        - generic [ref=e201]:
+          - generic [ref=e202]: Flutter
+          - generic [ref=e203]: Claude AI
+          - generic [ref=e204]: AWS Lambda
+          - generic [ref=e205]: DynamoDB
+          - generic [ref=e206]: OpenTofu
+          - generic [ref=e207]: Riverpod
+        - link "twinitylabs.com/setmind ↗" [ref=e208] [cursor=pointer]:
+          - /url: https://twinitylabs.com/setmind
+      - button "Adopted by Indian Railways Primary Suspension Redesign of Railway Bogie for Improved Fatigue Life jul 2019 — sept 2020 · Prof. N.S. Vyas & Prof. C. Chandraprakash Redesigned FIAT type LHB bogie suspensions. Design improvements accepted by Indian Railways for production rollout. MATLAB ANSYS FEA" [ref=e209]:
+        - generic [ref=e210]: Adopted by Indian Railways
+        - heading "Primary Suspension Redesign of Railway Bogie for Improved Fatigue Life" [level=3] [ref=e211]
+        - generic [ref=e212]: jul 2019 — sept 2020 · Prof. N.S. Vyas & Prof. C. Chandraprakash
+        - paragraph [ref=e213]: Redesigned FIAT type LHB bogie suspensions. Design improvements accepted by Indian Railways for production rollout.
+        - generic [ref=e214]:
+          - generic [ref=e215]: MATLAB
+          - generic [ref=e216]: ANSYS
+          - generic [ref=e217]: FEA
+      - button "Exhibited at TechEx '19, IIT Delhi Design & Development of an Electromagnetic Actuator aug 2018 — apr 2019 · Prof. Mohit Law Built 1st-gen compact Moving Iron Type actuator for active damping. Peak force ~13N in 30–140 Hz range. COMSOL SolidWorks MATLAB" [ref=e218]:
+        - generic [ref=e219]: Exhibited at TechEx '19, IIT Delhi
+        - heading "Design & Development of an Electromagnetic Actuator" [level=3] [ref=e220]
+        - generic [ref=e221]: aug 2018 — apr 2019 · Prof. Mohit Law
+        - paragraph [ref=e222]: Built 1st-gen compact Moving Iron Type actuator for active damping. Peak force ~13N in 30–140 Hz range.
+        - generic [ref=e223]:
+          - generic [ref=e224]: COMSOL
+          - generic [ref=e225]: SolidWorks
+          - generic [ref=e226]: MATLAB
+      - 'button "Railway Vehicle Dynamics: Multi-Body Analytical Approach jul — dec 2018 · Prof. N.S. Vyas Lateral/longitudinal dynamics modelling. Simpack rail-wheel pair, ANSYS APDL beam-with-moving-load. Simpack MATLAB ANSYS" [ref=e227]':
+        - 'heading "Railway Vehicle Dynamics: Multi-Body Analytical Approach" [level=3] [ref=e228]'
+        - generic [ref=e229]: jul — dec 2018 · Prof. N.S. Vyas
+        - paragraph [ref=e230]: Lateral/longitudinal dynamics modelling. Simpack rail-wheel pair, ANSYS APDL beam-with-moving-load.
+        - generic [ref=e231]:
+          - generic [ref=e232]: Simpack
+          - generic [ref=e233]: MATLAB
+          - generic [ref=e234]: ANSYS
+      - button "Structure Integrated Sensors & Actuators for Machine Tool Deformance dec 2018 — feb 2019 · Prof. Mohit Law Tuned Mass Damped Boring Bar design. Modal testing with CutPro. Chatter elimination optimization. SolidWorks MATLAB" [ref=e235]:
+        - heading "Structure Integrated Sensors & Actuators for Machine Tool Deformance" [level=3] [ref=e236]
+        - generic [ref=e237]: dec 2018 — feb 2019 · Prof. Mohit Law
+        - paragraph [ref=e238]: Tuned Mass Damped Boring Bar design. Modal testing with CutPro. Chatter elimination optimization.
+        - generic [ref=e239]:
+          - generic [ref=e240]: SolidWorks
+          - generic [ref=e241]: MATLAB
+      - button "FEA of Railway Couplers in LHB Coaches aug — sept 2019 · Prof. N.S. Vyas FE models for Frontier Technologies. ANSYS analysis under Buff, Draft & Bending loads. Anti-climbing simulation at 45 tonnes. ANSYS FEA" [ref=e242]:
+        - heading "FEA of Railway Couplers in LHB Coaches" [level=3] [ref=e243]
+        - generic [ref=e244]: aug — sept 2019 · Prof. N.S. Vyas
+        - paragraph [ref=e245]: FE models for Frontier Technologies. ANSYS analysis under Buff, Draft & Bending loads. Anti-climbing simulation at 45 tonnes.
+        - generic [ref=e246]:
+          - generic [ref=e247]: ANSYS
+          - generic [ref=e248]: FEA
+      - button "Motion Planning of a 6 DOF Robot Arm Manipulator sept — nov 2019 · Prof. Ashish Dutta C-Space computation, A* path planning, Rapidly Exploring Random Trees for mobile robot. MATLAB Robotics" [ref=e249]:
+        - heading "Motion Planning of a 6 DOF Robot Arm Manipulator" [level=3] [ref=e250]
+        - generic [ref=e251]: sept — nov 2019 · Prof. Ashish Dutta
+        - paragraph [ref=e252]: C-Space computation, A* path planning, Rapidly Exploring Random Trees for mobile robot.
+        - generic [ref=e253]:
+          - generic [ref=e254]: MATLAB
+          - generic [ref=e255]: Robotics
+      - button "Helicopter Coupled Trim Analysis — UH-60A Black Hawk aug — oct 2018 · Prof. Abhishek BEMT numerical solution, Newmark's algorithm for flap response, free flight coupled trim analysis. MATLAB" [ref=e256]:
+        - heading "Helicopter Coupled Trim Analysis — UH-60A Black Hawk" [level=3] [ref=e257]
+        - generic [ref=e258]: aug — oct 2018 · Prof. Abhishek
+        - paragraph [ref=e259]: BEMT numerical solution, Newmark's algorithm for flap response, free flight coupled trim analysis.
+        - generic [ref=e261]: MATLAB
+      - button "Output Feedback Stabilisation of Inverted Pendulum aug — nov 2018 · Prof. Ramprasad Potluri Implemented research paper on stabilization with uncertainties. Extended High Gain Observers. MATLAB Control" [ref=e262]:
+        - heading "Output Feedback Stabilisation of Inverted Pendulum" [level=3] [ref=e263]
+        - generic [ref=e264]: aug — nov 2018 · Prof. Ramprasad Potluri
+        - paragraph [ref=e265]: Implemented research paper on stabilization with uncertainties. Extended High Gain Observers.
+        - generic [ref=e266]:
+          - generic [ref=e267]: MATLAB
+          - generic [ref=e268]: Control
+      - button "Document Shredder & Automated Box Shifting Mechanism aug 2016 — apr 2017 · Prof. S.K. Choudhary & Prof. Rajiv Shekhar SolidWorks/AutoCAD modelling, CNC-fabricated prototypes, business plan & marketing brochure. SolidWorks AutoCAD" [ref=e269]:
+        - heading "Document Shredder & Automated Box Shifting Mechanism" [level=3] [ref=e270]
+        - generic [ref=e271]: aug 2016 — apr 2017 · Prof. S.K. Choudhary & Prof. Rajiv Shekhar
+        - paragraph [ref=e272]: SolidWorks/AutoCAD modelling, CNC-fabricated prototypes, business plan & marketing brochure.
+        - generic [ref=e273]:
+          - generic [ref=e274]: SolidWorks
+          - generic [ref=e275]: AutoCAD
+      - button "Deep Learning Specialization Projects 2019 deeplearning.ai on Coursera — Neural Style Transfer (VGG-19), Car Detection (YOLO), Face Recognition (FaceNet), DNNs for binary classification. Neural Networks YOLO Keras VGG-19" [ref=e276]:
+        - heading "Deep Learning Specialization Projects" [level=3] [ref=e277]
+        - generic [ref=e278]: "2019"
+        - paragraph [ref=e279]: deeplearning.ai on Coursera — Neural Style Transfer (VGG-19), Car Detection (YOLO), Face Recognition (FaceNet), DNNs for binary classification.
+        - generic [ref=e280]:
+          - generic [ref=e281]: Neural Networks
+          - generic [ref=e282]: YOLO
+          - generic [ref=e283]: Keras
+          - generic [ref=e284]: VGG-19
+  - generic [ref=e285]:
+    - generic [ref=e286]:
+      - generic [ref=e287]: // publications
+      - heading "Research" [level=2] [ref=e288]
+    - generic [ref=e289]:
+      - heading "Primary suspension failure analysis in FIAT type LHB bogies and life estimation" [level=3] [ref=e290]
+      - generic [ref=e291]:
+        - text: R. Kumar,
+        - strong [ref=e292]: T. Sharma
+        - text: ", A. Shekhar, N. S. Vyas"
+      - generic [ref=e293]: Engineering Failure Analysis, vol. 138, 2022
+  - generic [ref=e294]:
+    - generic [ref=e295]:
+      - generic [ref=e296]: // skills & domains
+      - heading "What I work with." [level=2] [ref=e297]
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - heading "Software & DevOps" [level=3] [ref=e300]
+        - generic [ref=e301]:
+          - generic [ref=e302]: Python
+          - generic [ref=e303]: Rust
+          - generic [ref=e304]: C++
+          - generic [ref=e305]: Dart
+          - generic [ref=e306]: TypeScript
+          - generic [ref=e307]: FastAPI
+          - generic [ref=e308]: Flutter
+          - generic [ref=e309]: SvelteKit
+          - generic [ref=e310]: Linux Kernel
+          - generic [ref=e311]: GitLab CI
+          - generic [ref=e312]: OpenTofu
+          - generic [ref=e313]: Podman
+          - generic [ref=e314]: BuildStream
+          - generic [ref=e315]: CMake
+          - generic [ref=e316]: Riverpod
+          - generic [ref=e317]: Drift/SQLite
+      - generic [ref=e318]:
+        - heading "AI Tools & LLMs" [level=3] [ref=e319]
+        - generic [ref=e320]:
+          - generic [ref=e321]: Claude API
+          - generic [ref=e322]: OpenAI API
+          - generic [ref=e323]: Claude Code
+          - generic [ref=e324]: Cursor
+          - generic [ref=e325]: LangChain
+          - generic [ref=e326]: Hugging Face
+          - generic [ref=e327]: vLLM
+          - generic [ref=e328]: LiteLLM
+          - generic [ref=e329]: Codex
+          - generic [ref=e330]: Harness
+          - generic [ref=e331]: Ollama
+          - generic [ref=e332]: Prompt Engineering
+      - generic [ref=e333]:
+        - heading "AI / ML" [level=3] [ref=e334]
+        - generic [ref=e335]:
+          - generic [ref=e336]: LSTM
+          - generic [ref=e337]: Neural Style Transfer
+          - generic [ref=e338]: YOLO
+          - generic [ref=e339]: Audio Processing
+          - generic [ref=e340]: Face Recognition
+          - generic [ref=e341]: Spectrograms
+          - generic [ref=e342]: ML Surrogates
+          - generic [ref=e343]: Predictive Maintenance
+          - generic [ref=e344]: RAG
+          - generic [ref=e345]: Agentic AI
+      - generic [ref=e346]:
+        - heading "Cloud & Infrastructure" [level=3] [ref=e347]
+        - generic [ref=e348]:
+          - generic [ref=e349]: AWS
+          - generic [ref=e350]: GCP
+          - generic [ref=e351]: S3
+          - generic [ref=e352]: Lambda
+          - generic [ref=e353]: EC2
+          - generic [ref=e354]: DynamoDB
+          - generic [ref=e355]: Cognito
+          - generic [ref=e356]: API Gateway
+          - generic [ref=e357]: Redshift
+          - generic [ref=e358]: Tableau
+          - generic [ref=e359]: RTI DDS
+          - generic [ref=e360]: RevenueCat
+      - generic [ref=e361]:
+        - heading "Mechanical & Simulation" [level=3] [ref=e362]
+        - generic [ref=e363]:
+          - generic [ref=e364]: ANSYS
+          - generic [ref=e365]: Abaqus
+          - generic [ref=e366]: COMSOL
+          - generic [ref=e367]: SolidWorks
+          - generic [ref=e368]: Simpack
+          - generic [ref=e369]: MATLAB
+          - generic [ref=e370]: FEA
+          - generic [ref=e371]: Multibody Dynamics
+  - generic [ref=e372]:
+    - generic [ref=e373]:
+      - generic [ref=e374]: // teaching & leadership
+      - heading "Beyond the code." [level=2] [ref=e375]
+    - generic [ref=e376]:
+      - generic [ref=e377]:
+        - heading "Teaching" [level=3] [ref=e378]
+        - list [ref=e379]:
+          - listitem [ref=e380]: "› TA — Engineering Graphics (TA101A), IIT Kanpur: 100+ first-year UG students under Prof. Anupam Saxena & Prof. Bharat Lohani"
+          - listitem [ref=e381]: "› TA — Advanced Mechanics of Solids (ME321A), IIT Kanpur: 100+ junior UG students under Prof. Ishan Sharma"
+      - generic [ref=e382]:
+        - heading "President, Association of Mechanical Engineers" [level=3] [ref=e383]
+        - list [ref=e384]:
+          - listitem [ref=e385]: › Led 15-member team managing interactions between 700+ students and 45+ faculties
+          - listitem [ref=e386]: › Sole incharge of 1.5 Lacs budget for yearlong workshops and Research Scholars' Day
+          - listitem [ref=e387]: › Organized MathWorks & Ansys training sessions for the department
+      - generic [ref=e388]:
+        - heading "Awards" [level=3] [ref=e389]
+        - generic [ref=e390]:
+          - strong [ref=e391]: 1st Runner Up — JLR GDD Hackathon
+          - paragraph [ref=e392]: Interactive gaze controlled HUDs (Jul 2021). Teams from all 6 GDD centers worldwide.
+        - generic [ref=e393]:
+          - strong [ref=e394]: Asha Khanna Award
+          - paragraph [ref=e395]: Nationwide top scorer in Mathematics at ISC, 2015 — Loyola School, Jamshedpur.
+        - generic [ref=e396]:
+          - strong [ref=e397]: JEE Advanced & JEE Main
+          - paragraph [ref=e398]: Qualified for admission to IITs.
+  - generic [ref=e399]:
+    - generic [ref=e400]:
+      - generic [ref=e401]: // education
+      - heading "Where it started." [level=2] [ref=e402]
+    - generic [ref=e403]:
+      - generic [ref=e404]:
+        - heading "Indian Institute of Technology Kanpur" [level=3] [ref=e405]
+        - paragraph [ref=e406]: B.Tech-M.Tech Dual Degree, Mechanical Engineering
+        - text: 2015 – 2020
+      - generic [ref=e407]:
+        - heading "Loyola School, Jamshedpur" [level=3] [ref=e408]
+        - paragraph [ref=e409]: Mathematics & Computer Science
+        - text: 2002 – 2015
+  - generic [ref=e411]:
+    - generic [ref=e412]: // let's connect
+    - blockquote [ref=e413]:
+      - text: "\"Courage is willingness to take the risk once you know the odds. Optimistic overconfidence means you are taking the risk because you don't know the odds. It's a big difference.\""
+      - generic [ref=e414]: — Daniel Kahneman
+    - generic [ref=e415]:
+      - link "email" [ref=e416] [cursor=pointer]:
+        - /url: mailto:work.tarunsharma@gmail.com
+      - link "linkedin" [ref=e417] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/tarunsha
+      - link "github" [ref=e418] [cursor=pointer]:
+        - /url: https://github.com/shtarun
+      - link "instagram" [ref=e419] [cursor=pointer]:
+        - /url: https://instagram.com/i.am.tarun
+      - link "resume.pdf" [ref=e420] [cursor=pointer]:
+        - /url: /files/Biodata_Tarun_Sharma.pdf
+    - paragraph [ref=e422]: Built with SvelteKit · Designed with intention
