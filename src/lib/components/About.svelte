@@ -38,7 +38,7 @@
 
 	const logos: { src: string; alt: string; url?: string }[] = [
 		{ src: '/images/logos/twinity.png', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
-		{ src: '/images/logos/mks.svg', alt: 'MKS Enterprises' },
+		{ src: '/images/logos/mks.png', alt: 'MKS Enterprises' },
 		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover', url: 'https://www.jaguarlandrover.com' },
 		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur', url: 'https://www.iitk.ac.in' },
 		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel', url: 'https://www.tatasteel.com' },
