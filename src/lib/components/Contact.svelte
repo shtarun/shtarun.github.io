@@ -18,9 +18,6 @@
 			<a href={meta.links.instagram} target="_blank" rel="noopener" class="contact-link">instagram</a>
 			<a href={meta.resumeUrl} target="_blank" rel="noopener" class="contact-link">resume.pdf</a>
 		</div>
-		<footer class="footer">
-			<p>Built with SvelteKit · Designed with intention</p>
-		</footer>
 	</div>
 </section>
 
@@ -70,12 +67,6 @@
 		border-color: var(--secondary);
 		box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
 		background: rgba(6, 182, 212, 0.1);
-	}
-	.footer p {
-		font-family: var(--font-mono);
-		font-size: 0.65rem;
-		color: var(--text-muted);
-		letter-spacing: 0.05em;
 	}
 	.fade-in {
 		opacity: 0; transform: translateY(30px);
