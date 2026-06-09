@@ -73,7 +73,7 @@
 	<div class="personal fade-in" use:inview>
 		<span class="personal-label">Off the clock</span>
 		<p class="personal-text">
-			When I'm not shipping code, I'm usually cooking my way through a new recipe — <strong>Cheeseburst pizza, vanilla ice cream, and litti-chokha</strong> top the list — or chasing the next adrenaline rush somewhere outdoors. I rotate through cricket, football, basketball, and swimming, with tennis, archery, and shooting still on the someday list. And yes, there's a stack of novels on my shelf I keep promising myself I'll actually finish.
+			I like to think a few decades ahead. I'm drawn to <strong>spacetech and energy</strong> — the fields I believe will define what humanity becomes next — and I see <strong>robotics and AI</strong> as the fastest path up the <strong>Kardashev scale</strong> toward a Type&nbsp;I civilization. That same curiosity spills into <strong>philosophy and social dynamics</strong>, and how they rhyme with the laws that govern everything else. I'm just as drawn to <strong>business</strong> — the most powerful lever I know for turning these ideas into <strong>maximal social impact</strong> at scale. Closer to home, I'm fascinated by the <strong>human mind and fitness</strong> — there's a quiet joy in <strong>lifting weights</strong> and watching effort compound over time. When I step away from all that, my weekends lean toward <strong>football and badminton</strong>, with <strong>shooting, horse riding, and surfing</strong> waiting patiently on the bucket list. And to unwind, you'll find me <strong>cooking something new</strong> or wandering off into the <strong>countryside</strong> for the quiet.
 		</p>
 	</div>
 
