@@ -39,10 +39,10 @@
 	const logos: { src: string; alt: string; url?: string }[] = [
 		{ src: '/images/logos/twinity.png', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
 		{ src: '/images/logos/mks.svg', alt: 'MKS Enterprises' },
-		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover' },
-		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur' },
-		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel' },
-		{ src: '/images/logos/eta.png', alt: 'ETA Technology' }
+		{ src: '/images/logos/jlr.png', alt: 'Jaguar Land Rover', url: 'https://www.jaguarlandrover.com' },
+		{ src: '/images/logos/iitk.svg', alt: 'IIT Kanpur', url: 'https://www.iitk.ac.in' },
+		{ src: '/images/logos/tata-steel.png', alt: 'Tata Steel', url: 'https://www.tatasteel.com' },
+		{ src: '/images/logos/eta.png', alt: 'ETA Technology', url: 'https://etatechnology.in/' }
 	];
 </script>
 
