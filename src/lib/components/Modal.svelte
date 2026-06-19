@@ -3,20 +3,32 @@
 
 	let { open = $bindable(false), children } = $props();
 
+	// Lock background scroll while the modal is open so wheel/trackpad
+	// gestures scroll the modal content instead of the page behind it.
+	$effect(() => {
+		if (typeof document === 'undefined') return;
+		document.body.style.overflow = open ? 'hidden' : '';
+		return () => {
+			document.body.style.overflow = '';
+		};
+	});
+
 	function close() {
 		open = false;
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape') close();
+		if (open && e.key === 'Escape') close();
 	}
 </script>
 
+<svelte:window onkeydown={handleKeydown} />
+
 {#if open}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div class="overlay" transition:fade={{ duration: 200 }} onclick={close} onkeydown={handleKeydown}>
+	<div class="overlay" transition:fade={{ duration: 200 }} onclick={close}>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div class="modal" transition:scale={{ duration: 300, start: 0.95 }} onclick={(e) => e.stopPropagation()} onkeydown={handleKeydown}>
+		<div class="modal" transition:scale={{ duration: 300, start: 0.95 }} onclick={(e) => e.stopPropagation()}>
 			<button class="close-btn" onclick={close} aria-label="Close">✕</button>
 			{@render children()}
 		</div>
@@ -45,6 +57,8 @@
 		width: 100%;
 		max-height: 80vh;
 		overflow-y: auto;
+		overscroll-behavior: contain;
+		-webkit-overflow-scrolling: touch;
 		position: relative;
 	}
 	.close-btn {
