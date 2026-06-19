@@ -15,7 +15,7 @@
 	<BentoGrid>
 		{#each experience as entry, i}
 			<BentoCard
-				title="{entry.role} — {entry.company}"
+				title={entry.company ? `${entry.role} — ${entry.company}` : entry.role}
 				meta="{entry.date} · {entry.location}"
 				summary={entry.summary}
 				tags={entry.tags}

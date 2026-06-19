@@ -129,6 +129,31 @@ export const experience: ExperienceEntry[] = [
 		gridSize: 'tall'
 	},
 	{
+		id: 'psychotherapy-ai',
+		role: 'AI Therapy Assistant',
+		company: '',
+		date: 'sept 2023 — feb 2024',
+		location: 'Remote',
+		summary: 'Built an MVP for therapists — audio diarization, emotional trait analysis, and LLM-based insight extraction over therapy conversations. Shipped to 3 senior therapists for real-world feedback.',
+		details: [
+			'Architected and built the complete MVP on AWS Bedrock, OpenAI GPT-3, and a Streamlit frontend — letting therapists interact with the product immediately for early feedback',
+			'Implemented an audio diarization and chunking pipeline using Whisper for STT — separating speaker streams and segmenting long recordings; processed 50+ hours of therapy conversations at 90% diarization accuracy',
+			'Developed an emotional trait analysis engine extracting sentiment, empathy markers, and emotional patterns for both therapist and patient via LLM-based classification',
+			'Deployed end-to-end AWS infrastructure (Lambda, S3, API Gateway, Bedrock) with secure authentication for sensitive therapy data',
+			'Led the product feedback loop — shipped the Streamlit frontend to 3 senior therapists, collecting usage data and iterating on features',
+			'Collaborated with Johns Hopkins professors to translate therapy methodologies and emotion modeling into technical specifications',
+			'Worked alongside a 6-person team (3 senior engineers + 3 interns), delivering the MVP in a month'
+		],
+		tags: [
+			{ label: 'AWS Bedrock', color: 'purple' },
+			{ label: 'Whisper', color: 'cyan' },
+			{ label: 'LLM', color: 'purple' },
+			{ label: 'Streamlit', color: 'cyan' }
+		],
+		badge: 'side project',
+		gridSize: 'tall'
+	},
+	{
 		id: 'jlr-gtp',
 		role: 'SWE — Global Testing Platform',
 		company: 'Jaguar Land Rover',
