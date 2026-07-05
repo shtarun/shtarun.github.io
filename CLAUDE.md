@@ -16,6 +16,7 @@ Personal portfolio website for **Tarun Sharma**, deployed at **shtarun.github.io
 - **Phone:** +91-7703090720
 - **LinkedIn:** linkedin.com/in/tarunsha
 - **GitHub:** github.com/shtarun
+- **Google Scholar:** scholar.google.com/citations?user=mb2U-0wAAAAJ
 - **Website:** shtarun.github.io
 - **Instagram:** i.am.tarun
 - **Facebook:** tarun.sharma97
@@ -86,7 +87,7 @@ Building an applied Digital Twin solutions venture; defining product vision, ear
 
 #### Graduate Software Engineer Trainee (Sept 2020 – Aug 2022)
 
-- Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing. This concept is now with the patent office
+- Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing (NOTE: this work was NOT patented — never claim a patent or "patent pending" anywhere)
 - Collaborated on Virtual & Extended Reality experiences, presenting innovative solutions to the Board of Directors
 - Contributed to developing data pipelines, machine learning models for audio signal analysis, and initiating Software-in-Loop testing processes
 - Provided technical mentorship, participated in hiring processes for full-time roles and internships, and acted as a liaison with IIT Kanpur for recruitment initiatives

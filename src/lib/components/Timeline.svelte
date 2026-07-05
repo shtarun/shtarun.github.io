@@ -30,7 +30,7 @@
 			date="sept 2020 - aug 2025"
 			title="Graduate Trainee → Senior SWE"
 			company="Jaguar Land Rover"
-			items={['Software-Defined Vehicles platform', 'Global Testing Platform', 'Innovation Champion, Open Innovation Hub', 'Predictive maintenance research (LSTM, patent pending)']}
+			items={['Software-Defined Vehicles platform', 'Global Testing Platform', 'Innovation Champion, Open Innovation Hub', 'Predictive maintenance research (LSTM)']}
 			delay={300}
 		/>
 		<TimelineNode

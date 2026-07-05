@@ -15,6 +15,7 @@
 			<a href={meta.links.email} class="contact-link">email</a>
 			<a href={meta.links.linkedin} target="_blank" rel="noopener" class="contact-link">linkedin</a>
 			<a href={meta.links.github} target="_blank" rel="noopener" class="contact-link">github</a>
+			<a href={meta.links.scholar} target="_blank" rel="noopener" class="contact-link">google scholar</a>
 			<a href={meta.links.instagram} target="_blank" rel="noopener" class="contact-link">instagram</a>
 			<a href={meta.resumeUrl} target="_blank" rel="noopener" class="contact-link">resume.pdf</a>
 		</div>

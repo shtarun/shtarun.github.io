@@ -11,6 +11,7 @@ export const meta = {
 	links: {
 		linkedin: 'https://www.linkedin.com/in/tarunsha',
 		github: 'https://github.com/shtarun',
+		scholar: 'https://scholar.google.com/citations?user=mb2U-0wAAAAJ',
 		instagram: 'https://instagram.com/i.am.tarun',
 		email: 'mailto:work.tarunsharma@gmail.com'
 	},

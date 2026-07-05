@@ -12,7 +12,7 @@
 		{ domain: 'research', body: 'Peer-reviewed paper in <strong>Engineering Failure Analysis</strong>' },
 		{
 			domain: 'machine learning',
-			body: 'Predictive maintenance research at JLR, now <strong>with the patent office</strong>'
+			body: 'LSTM-based <strong>predictive maintenance research</strong> with spectrograms at JLR'
 		},
 		{
 			domain: 'leadership',

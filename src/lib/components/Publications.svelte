@@ -2,6 +2,7 @@
 	import SectionLabel from './SectionLabel.svelte';
 	import { inview } from '$lib/actions/inview';
 	import { publications } from '$lib/data/publications';
+	import { meta } from '$lib/data/meta';
 </script>
 
 <section class="section" id="publications">
@@ -11,9 +12,13 @@
 	</div>
 	{#each publications as pub}
 		<div class="pub-card fade-in" use:inview>
-			<h3>{pub.title}</h3>
+			<h3><a href={pub.url} target="_blank" rel="noopener">{pub.title}</a></h3>
 			<div class="pub-authors">{@html pub.authors}</div>
-			<div class="pub-venue">{pub.venue}, vol. 138, {pub.year}</div>
+			<div class="pub-venue">{pub.venue}, vol. {pub.volume}, {pub.year}</div>
+			<div class="pub-links">
+				<a href={pub.url} target="_blank" rel="noopener">read the paper</a>
+				<a href={meta.links.scholar} target="_blank" rel="noopener">google scholar</a>
+			</div>
 		</div>
 	{/each}
 </section>
@@ -56,10 +61,39 @@
 		color: var(--text-secondary);
 		margin-bottom: 0.25rem;
 	}
+	.pub-card h3 a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	.pub-card h3 a:hover {
+		color: var(--secondary);
+	}
 	.pub-venue {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		color: var(--primary);
+	}
+	.pub-links {
+		display: flex;
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+	.pub-links a {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--secondary);
+		text-decoration: none;
+		padding: 0.35rem 0.75rem;
+		border: 1px solid rgba(6, 182, 212, 0.3);
+		border-radius: 6px;
+		background: rgba(6, 182, 212, 0.05);
+		transition: all 0.3s ease;
+	}
+	.pub-links a:hover {
+		border-color: var(--secondary);
+		box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+		background: rgba(6, 182, 212, 0.1);
 	}
 	.fade-in {
 		opacity: 0; transform: translateY(30px);

@@ -177,16 +177,16 @@ export const experience: ExperienceEntry[] = [
 		company: 'Jaguar Land Rover',
 		date: 'sept 2020 - aug 2022',
 		location: 'Bengaluru, India',
-		summary: 'Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines. Patent pending.',
+		summary: 'Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines.',
 		details: [
-			'Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing; the concept is now with the patent office',
+			'Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing',
 			'Collaborated on Virtual & Extended Reality experiences, presenting innovative solutions to the Board of Directors',
 			'Contributed to data pipelines, ML models for audio signal analysis, and Software-in-Loop testing',
 			'Provided technical mentorship, hiring process participation, and IIT Kanpur recruitment liaison'
 		],
 		tags: [
 			{ label: 'LSTM', color: 'purple' },
-			{ label: 'Patent', color: 'amber' }
+			{ label: 'VR/XR', color: 'cyan' }
 		],
 		gridSize: 'standard'
 	},
