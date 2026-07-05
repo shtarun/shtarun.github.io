@@ -9,7 +9,7 @@
 		<SectionLabel text="let's connect" />
 		<blockquote class="quote">
 			"{meta.quote.text}"
-			<cite>— {meta.quote.author}</cite>
+			<cite>{meta.quote.author}</cite>
 		</blockquote>
 		<div class="contact-links">
 			<a href={meta.links.email} class="contact-link">email</a>

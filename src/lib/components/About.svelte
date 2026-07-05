@@ -1,40 +1,24 @@
 <script lang="ts">
-	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
 	import { inview } from '$lib/actions/inview';
 	import SectionLabel from './SectionLabel.svelte';
-	import { meta } from '$lib/data/meta';
 
-	let started = $state(false);
-
-	const stat0 = tweened(0, { duration: 2000, easing: cubicOut });
-	const stat1 = tweened(0, { duration: 2000, easing: cubicOut });
-	const stat2 = tweened(0, { duration: 2000, easing: cubicOut });
-	const stat3 = tweened(0, { duration: 2000, easing: cubicOut });
-
-	const parsed = meta.stats.map((s) => ({
-		target: parseInt(s.value.replace(/\D/g, ''), 10),
-		suffix: s.value.replace(/[0-9]/g, ''),
-		label: s.label
-	}));
-
-	function startCounters(node: HTMLElement) {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting && !started) {
-					started = true;
-					stat0.set(parsed[0].target);
-					stat1.set(parsed[1].target);
-					stat2.set(parsed[2].target);
-					stat3.set(parsed[3].target);
-					observer.disconnect();
-				}
-			},
-			{ threshold: 0.3 }
-		);
-		observer.observe(node);
-		return { destroy: () => observer.disconnect() };
-	}
+	const shipped: { domain: string; body: string }[] = [
+		{ domain: 'product', body: 'Shipped <strong>SetMind</strong>, an AI-powered fitness app, end-to-end' },
+		{ domain: 'mechanical', body: 'Railway suspension redesign <strong>adopted by Indian Railways</strong>' },
+		{
+			domain: 'automotive safety',
+			body: 'Drove <strong>ASIL-B safety-certified Linux</strong> for <strong>Software-Defined Vehicles</strong> at JLR'
+		},
+		{ domain: 'research', body: 'Peer-reviewed paper in <strong>Engineering Failure Analysis</strong>' },
+		{
+			domain: 'machine learning',
+			body: 'Predictive maintenance research at JLR, now <strong>with the patent office</strong>'
+		},
+		{
+			domain: 'leadership',
+			body: 'Presented platform progress to the <strong>Boards of JLR and Tata Motors</strong>'
+		}
+	];
 
 	const logos: { src: string; alt: string; url?: string }[] = [
 		{ src: '/images/logos/twinity.png', alt: 'Twinity Labs', url: 'https://twinitylabs.com' },
@@ -50,30 +34,20 @@
 	<div class="fade-in" use:inview>
 		<SectionLabel text="about" />
 		<h2 class="section-heading">At a glance.</h2>
-		<div class="stats" use:startCounters>
-			<div class="stat">
-				<div class="stat-number">{Math.round($stat0)}{parsed[0].suffix}</div>
-				<div class="stat-label">{parsed[0].label}</div>
-			</div>
-			<div class="stat">
-				<div class="stat-number">{Math.round($stat1)}{parsed[1].suffix}</div>
-				<div class="stat-label">{parsed[1].label}</div>
-			</div>
-			<div class="stat">
-				<div class="stat-number">{Math.round($stat2)}{parsed[2].suffix}</div>
-				<div class="stat-label">{parsed[2].label}</div>
-			</div>
-			<div class="stat">
-				<div class="stat-number">{Math.round($stat3)}{parsed[3].suffix}</div>
-				<div class="stat-label">{parsed[3].label}</div>
-			</div>
+		<div class="shipped">
+			{#each shipped as item}
+				<div class="shipped-item">
+					<span class="shipped-domain">{item.domain}</span>
+					<p class="shipped-body">{@html item.body}</p>
+				</div>
+			{/each}
 		</div>
 	</div>
 
 	<div class="personal fade-in" use:inview>
 		<span class="personal-label">Off the clock</span>
 		<p class="personal-text">
-			I like to think a few decades ahead. I'm drawn to <strong>spacetech and energy</strong> — the fields I believe will define what humanity becomes next — and I see <strong>robotics and AI</strong> as the fastest path up the <strong>Kardashev scale</strong> toward a Type&nbsp;I civilization. That same curiosity spills into <strong>philosophy and social dynamics</strong>, and how they rhyme with the laws that govern everything else. I'm just as drawn to <strong>business</strong> — the most powerful lever I know for turning these ideas into <strong>maximal social impact</strong> at scale. Closer to home, I'm fascinated by the <strong>human mind and fitness</strong> — there's a quiet joy in <strong>lifting weights</strong> and watching effort compound over time. When I step away from all that, my weekends lean toward <strong>football, badminton, and swimming</strong>, with <strong>tennis, shooting, horse riding, and surfing</strong> waiting patiently on the bucket list. And to unwind, you'll find me <strong>cooking something new</strong> or wandering off into the <strong>countryside</strong> for the quiet.
+			I like to think a few decades ahead. I'm drawn to <strong>spacetech and energy</strong>, the fields I believe will define what humanity becomes next, and I see <strong>robotics and AI</strong> as the fastest path up the <strong>Kardashev scale</strong> toward a Type&nbsp;I civilization. That same curiosity spills into <strong>philosophy and social dynamics</strong>, and how they rhyme with the laws that govern everything else. I'm just as drawn to <strong>business</strong>, the most powerful lever I know for turning these ideas into <strong>maximal social impact</strong> at scale. Closer to home, I'm fascinated by the <strong>human mind and fitness</strong>. There's a quiet joy in <strong>lifting weights</strong> and watching effort compound over time. When I step away from all that, my weekends lean toward <strong>football, badminton, and swimming</strong>, with <strong>tennis, shooting, horse riding, and surfing</strong> waiting patiently on the bucket list. And to unwind, you'll find me <strong>cooking something new</strong> or wandering off into the <strong>countryside</strong> for the quiet.
 		</p>
 	</div>
 
@@ -107,33 +81,43 @@
 		font-weight: 700;
 		margin-bottom: 2rem;
 	}
-	.stats {
-		display: flex;
-		gap: 3rem;
-		flex-wrap: wrap;
+	.shipped {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: 1.25rem;
 	}
-	.stat-number {
-		font-family: var(--font-heading);
-		font-size: 2.5rem;
-		font-weight: 700;
-		background: linear-gradient(135deg, var(--primary), var(--secondary));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+	.shipped-item {
+		padding: 1.25rem 1.4rem;
+		border: 1px solid rgba(255, 255, 255, 0.07);
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.02);
+		transition: border-color 0.3s ease, transform 0.3s ease;
 	}
-	.stat-label {
+	.shipped-item:hover {
+		border-color: rgba(6, 182, 212, 0.35);
+		transform: translateY(-2px);
+	}
+	.shipped-domain {
 		font-family: var(--font-mono);
-		font-size: 0.7rem;
-		color: var(--text-muted);
+		font-size: 0.65rem;
+		color: var(--secondary);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		margin-top: 0.25rem;
+		letter-spacing: 0.15em;
+		display: block;
+		margin-bottom: 0.6rem;
 	}
-
+	.shipped-body {
+		color: var(--text-secondary);
+		font-size: 0.92rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+	.shipped-body :global(strong) {
+		color: var(--text-primary);
+		font-weight: 600;
+	}
 	.personal {
 		margin-top: 4rem;
-		padding-top: 3rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.06);
 	}
 	.personal-label {
 		font-family: var(--font-mono);
@@ -221,8 +205,5 @@
 			height: 26px;
 			max-width: 90px;
 		}
-	}
-	@media (max-width: 600px) {
-		.stats { gap: 1.5rem; }
 	}
 </style>

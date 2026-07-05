@@ -19,7 +19,7 @@ export const experience: ExperienceEntry[] = [
 		id: 'mks',
 		role: 'General Manager',
 		company: 'MKS Enterprises',
-		date: 'jan 2026 — present',
+		date: 'jan 2026 - present',
 		location: 'Jamshedpur, India',
 		summary: 'Leading operations for a heavy crane business serving major industrial and public-sector clients. Overseeing sales, AMC, spare parts supply, and on-ground operator training.',
 		details: [
@@ -41,11 +41,11 @@ export const experience: ExperienceEntry[] = [
 		id: 'twinity',
 		role: 'Founder & CEO',
 		company: 'Twinity Labs',
-		date: 'sept 2025 — present',
+		date: 'sept 2025 - present',
 		location: 'Bengaluru, India',
-		summary: 'Building an applied Digital Twin solutions venture with LLM-powered tooling. Shipping AI-native products end-to-end — from Flutter apps with Claude/GPT integration to AWS serverless backends.',
+		summary: 'Building an applied Digital Twin solutions venture with LLM-powered tooling. Shipping AI-native products end-to-end, from Flutter apps with Claude/GPT integration to AWS serverless backends.',
 		details: [
-			'Building an applied Digital Twin solutions venture — product vision, early GTM, partnerships, and pilot scoping with industrial clients',
+			'Building an applied Digital Twin solutions venture: product vision, early GTM, partnerships, and pilot scoping with industrial clients',
 			'Shipping AI-native products end-to-end: Flutter mobile apps with Claude & OpenAI integration, AWS serverless backends (Lambda, DynamoDB, Cognito), OpenTofu IaC',
 			'Leveraging agentic AI tooling (Claude Code, Cursor, vLLM, LiteLLM) across the full development lifecycle'
 		],
@@ -62,16 +62,16 @@ export const experience: ExperienceEntry[] = [
 	},
 	{
 		id: 'jlr-senior',
-		role: 'Senior SWE — Software-Defined Vehicles',
+		role: 'Senior SWE, Software-Defined Vehicles',
 		company: 'Jaguar Land Rover',
-		date: 'jan 2025 — aug 2025',
+		date: 'jan 2025 - aug 2025',
 		location: 'Bengaluru, India',
 		summary: 'Zero-downtime migration of 450+ repos. Platform-agnostic CI/CD. Open-source IaC stack (OpenTofu, BuildBarn, Lorry).',
 		details: [
 			'Triggered enterprise-wide shift from commercial Terraform to OpenTofu, refactoring shared modules, remote state backends, and CI workflows',
-			'Orchestrated zero-downtime migration of 450+ GitLab repos, Podman base images, and infra into JLR — kept Central Compute Module builds green',
+			'Orchestrated zero-downtime migration of 450+ GitLab repos, Podman base images, and infra into JLR, keeping Central Compute Module builds green',
 			'Provisioned a fresh AWS account, aligning security, access, and cost controls with program growth',
-			'Released MR1 pipeline with SoC/MCU parity — shrinking duplication and accelerating reuse across programs',
+			'Released MR1 pipeline with SoC/MCU parity, shrinking duplication and accelerating reuse across programs',
 			'Published a standardized repo template for SDV platform integration in hours instead of days',
 			'Rebuilt and validated the CCMA MCU integrated image for NXP S32N board under CI',
 			'Secured alignment from senior stakeholders on SDV GitLab restructuring',
@@ -86,14 +86,14 @@ export const experience: ExperienceEntry[] = [
 	},
 	{
 		id: 'jlr-innovation',
-		role: 'Innovation Champion — Open Innovation Hub',
+		role: 'Innovation Champion, Open Innovation Hub',
 		company: 'Jaguar Land Rover',
-		date: 'dec 2024 — aug 2025',
+		date: 'dec 2024 - aug 2025',
 		location: 'Bengaluru, India',
 		summary: 'Led Digital Twin push with IndusTANTRA. Cross-functional innovation via Plug and Play startup collaborations.',
 		details: [
-			'Championed cross-functional innovation — identified business gaps and drove end-to-end startup collaborations via Plug and Play, owning discovery → scouting → PoC → funding',
-			'Led JLR\'s Digital Twin push — engaged IndusTANTRA (Prof. N.S. Vyas, IIT Kanpur), reduced engagement turnaround from months to under 4 weeks, launched ML surrogate-modeling pilots'
+			'Championed cross-functional innovation: identified business gaps and drove end-to-end startup collaborations via Plug and Play, owning discovery, scouting, PoC, and funding',
+			'Led JLR\'s Digital Twin push: engaged IndusTANTRA (Prof. N.S. Vyas, IIT Kanpur), reduced engagement turnaround from months to under 4 weeks, launched ML surrogate-modeling pilots'
 		],
 		tags: [
 			{ label: 'Innovation', color: 'amber' },
@@ -103,16 +103,16 @@ export const experience: ExperienceEntry[] = [
 	},
 	{
 		id: 'jlr-swe-sdv',
-		role: 'SWE — Software-Defined Vehicles',
+		role: 'SWE, Software-Defined Vehicles',
 		company: 'Jaguar Land Rover',
-		date: 'nov 2023 — feb 2025',
+		date: 'nov 2023 - feb 2025',
 		location: 'Bengaluru, India',
 		summary: 'Presented to Boards of JLR & Tata Motors. Led OS/BSP bring-up. Built deterministic platform services. AWS boot observability pipeline. ASIL-B certification leadership.',
 		details: [
 			'Presented multiple times to the Boards of JLR and Tata Motors on base OS/platform progress, aligning leadership on scope, risks, and milestones',
 			'Drove ASIL-B certification plans for a safety-qualified Linux platform aligned to ISO 26262',
 			'Maintained CCMA SoC MR2 repo; integrated Podman via BuildStream and standardized builds with CMake, Ninja, Meson',
-			'Led board bring-up for OS and BSP integration — Linux kernel, network interfaces, systemd services for stable boots',
+			'Led board bring-up for OS and BSP integration: Linux kernel, network interfaces, systemd services for stable boots',
 			'Implemented a Deterministic Construction Service with Codethink for JLR\'s custom Linux OS',
 			'Integrated AWS, Alexa, and RTI DDS for in-vehicle connectivity, telemetry, and IPC',
 			'Built automated AWS (S3, Lambda, EC2, Redshift) boot observability pipeline feeding Tableau dashboards',
@@ -132,15 +132,15 @@ export const experience: ExperienceEntry[] = [
 		id: 'psychotherapy-ai',
 		role: 'AI Therapy Assistant',
 		company: '',
-		date: 'sept 2023 — feb 2024',
+		date: 'sept 2023 - feb 2024',
 		location: 'Remote',
-		summary: 'Built an MVP for therapists — audio diarization, emotional trait analysis, and LLM-based insight extraction over therapy conversations. Shipped to 3 senior therapists for real-world feedback.',
+		summary: 'Built an MVP for therapists: audio diarization, emotional trait analysis, and LLM-based insight extraction over therapy conversations. Shipped to 3 senior therapists for real-world feedback.',
 		details: [
-			'Architected and built the complete MVP on AWS Bedrock, OpenAI GPT-3, and a Streamlit frontend — letting therapists interact with the product immediately for early feedback',
-			'Implemented an audio diarization and chunking pipeline using Whisper for STT — separating speaker streams and segmenting long recordings; processed 50+ hours of therapy conversations at 90% diarization accuracy',
+			'Architected and built the complete MVP on AWS Bedrock, OpenAI GPT-3, and a Streamlit frontend, letting therapists interact with the product immediately for early feedback',
+			'Implemented an audio diarization and chunking pipeline using Whisper for STT, separating speaker streams and segmenting long recordings; processed 50+ hours of therapy conversations at 90% diarization accuracy',
 			'Developed an emotional trait analysis engine extracting sentiment, empathy markers, and emotional patterns for both therapist and patient via LLM-based classification',
 			'Deployed end-to-end AWS infrastructure (Lambda, S3, API Gateway, Bedrock) with secure authentication for sensitive therapy data',
-			'Led the product feedback loop — shipped the Streamlit frontend to 3 senior therapists, collecting usage data and iterating on features',
+			'Led the product feedback loop: shipped the Streamlit frontend to 3 senior therapists, collecting usage data and iterating on features',
 			'Collaborated with Johns Hopkins professors to translate therapy methodologies and emotion modeling into technical specifications',
 			'Worked alongside a 6-person team (3 senior engineers + 3 interns), delivering the MVP in a month'
 		],
@@ -155,9 +155,9 @@ export const experience: ExperienceEntry[] = [
 	},
 	{
 		id: 'jlr-gtp',
-		role: 'SWE — Global Testing Platform',
+		role: 'SWE, Global Testing Platform',
 		company: 'Jaguar Land Rover',
-		date: 'sept 2022 — feb 2024',
+		date: 'sept 2022 - feb 2024',
 		location: 'Bengaluru, India',
 		summary: 'Python Test Executable Generator. FastAPI microservice for GCP state. 300+ test assets across dSPACE/Vector/NI.',
 		details: [
@@ -175,11 +175,11 @@ export const experience: ExperienceEntry[] = [
 		id: 'jlr-trainee',
 		role: 'Graduate Trainee',
 		company: 'Jaguar Land Rover',
-		date: 'sept 2020 — aug 2022',
+		date: 'sept 2020 - aug 2022',
 		location: 'Bengaluru, India',
 		summary: 'Predictive maintenance (LSTM, spectrograms). VR/XR demos for the Board. Audio-ML pipelines. Patent pending.',
 		details: [
-			'Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing — concept now with patent office',
+			'Engaged in predictive maintenance research using LSTM, focusing on spectrograms, clustering, and image processing; the concept is now with the patent office',
 			'Collaborated on Virtual & Extended Reality experiences, presenting innovative solutions to the Board of Directors',
 			'Contributed to data pipelines, ML models for audio signal analysis, and Software-in-Loop testing',
 			'Provided technical mentorship, hiring process participation, and IIT Kanpur recruitment liaison'
@@ -194,7 +194,7 @@ export const experience: ExperienceEntry[] = [
 		id: 'iitk-pe',
 		role: 'Project Engineer',
 		company: 'IIT Kanpur',
-		date: 'jul — sept 2020',
+		date: 'jul - sept 2020',
 		location: 'Kanpur, India',
 		summary: 'MagRail prototype for Hyper Poland (Nevomo). Problem statement and solution framing under Prof. N.S. Vyas.',
 		details: [
@@ -209,7 +209,7 @@ export const experience: ExperienceEntry[] = [
 		id: 'eta',
 		role: 'Summer Intern',
 		company: 'ETA Technology',
-		date: 'may — jul 2018',
+		date: 'may - jul 2018',
 		location: 'Bengaluru, India',
 		summary: 'Hydrostatic bearing design (60,000 kgf), friction welding machine components, failure analysis.',
 		details: [
@@ -228,7 +228,7 @@ export const experience: ExperienceEntry[] = [
 		id: 'tata',
 		role: 'Summer Intern',
 		company: 'R&D, Tata Steel',
-		date: 'may — jul 2017',
+		date: 'may - jul 2017',
 		location: 'Jamshedpur, India',
 		summary: 'Tensile specimen modelling in Abaqus. Results contributed to new specimen design for automotive applications.',
 		details: [
